@@ -2474,6 +2474,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1685089821223377982, guid: 5d84c26e6b06b8d4685d2e939857757b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1685089821223377983, guid: 5d84c26e6b06b8d4685d2e939857757b,
         type: 3}
       propertyPath: endPoint
