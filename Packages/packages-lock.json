@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.lootlocker.lootlockersdk": {
-      "version": "file:D:/Freelance work/Sealy Bounce/unity-sdk-main",
+      "version": "file:D:/Used/Job/Sealy bounce/Lootlocker/unity-sdk-main",
       "depth": 0,
       "source": "local",
       "dependencies": {
