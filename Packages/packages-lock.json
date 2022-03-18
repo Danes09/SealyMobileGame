@@ -1,11 +1,7 @@
 {
   "dependencies": {
     "com.lootlocker.lootlockersdk": {
-<<<<<<< Updated upstream
       "version": "file:D:/Used/Job/Sealy bounce/Lootlocker/unity-sdk-main",
-=======
-      "version": "file:D:/downloadD/unity-sdk-main",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "local",
       "dependencies": {
