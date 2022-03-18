@@ -3677,6 +3677,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerObject
       objectReference: {fileID: 0}
+    - target: {fileID: 8611944082160671296, guid: eac47c021bf44e04a99704c56e5ec77f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8611944082160671309, guid: eac47c021bf44e04a99704c56e5ec77f,
         type: 3}
       propertyPath: m_Size.y
