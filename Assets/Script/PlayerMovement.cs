@@ -22,8 +22,18 @@ public class PlayerMovement : MonoBehaviour
 	private float stunTimeElapsed;
 	private float totalStunDuration;
 	private Coroutine stunCoroutine;
-	
-    public void SetPlayerMoveDirection(Vector2 _targetPoint)
+
+	//! Use for Jump
+	[SerializeField] private bool isJumping = false;
+	public GameObject exitwaterBodytrigger;
+	private Rigidbody2D rd2d;
+
+	private void Awake()
+	{
+		rd2d = transform.GetComponent<Rigidbody2D>();
+	}
+
+	public void SetPlayerMoveDirection(Vector2 _targetPoint)
     {
 		if (stunned)
 		{
@@ -159,6 +169,45 @@ public class PlayerMovement : MonoBehaviour
 		stunCoroutine = null;
 
 		OnStunRecover?.Invoke();
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		isJumping = true;
+	}
+
+	IEnumerator EnterWater()
+	{
+		yield return new WaitForSeconds(1.5f);
+		drive();
+		Debug.Log("StartCounting");
+	}
+
+	private void Update()
+	{
+		if (isJumping == true)
+		{
+			jump();
+			exitwaterBodytrigger.SetActive(false);
+			StartCoroutine(EnterWater());
+		}
+
+	}
+	private void jump()
+	{
+		float jumpVelocity = 1f;
+		rd2d.velocity = Vector2.up * jumpVelocity;
+		rd2d.gravityScale = 0.5f;
+		isJumping = false;
+		Debug.Log("Jump");
+	}
+
+	public void drive()
+	{
+		rd2d.gravityScale = 0f;
+		rd2d.velocity = Vector2.zero;
+		StopPlayer();
+		exitwaterBodytrigger.SetActive(true);
 	}
 }
 
