@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.lootlocker.lootlockersdk": {
-      "version": "file:D:/downloadD/unity-sdk-main",
+      "version": "file:Lootlocker/unity-sdk-main",
       "depth": 0,
       "source": "local",
       "dependencies": {
