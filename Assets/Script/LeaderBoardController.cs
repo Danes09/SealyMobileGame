@@ -38,18 +38,21 @@ public class LeaderBoardController : MonoBehaviour
 
     public void ShowScores()
     {
-        LootLockerSDKManager.GetScoreList(ID, MaxScores, (response) => {
-
-            if (response.success)
+        
+        
+          LootLockerSDKManager.GetScoreList(ID, MaxScores, (response) => {
+                if (response.success)
             {
                 //LootLockerMember has become LootLockerLeaderboardMember
 
                 LootLockerLeaderboardMember[] scores = response.items;
-                //LootLockerMember[] scores = response.items;
+                  LootLockerLeaderboardMember[] members = response.items;
+                /*ADDING IN BOTH THE Scores AND the Members prevents the leaderboard from being populated with blank entries that said
+                 "NONE"*/
 
                 for (int i = 0; i < scores.Length; i++)
                 {
-                    Entries[i].text = (scores[i].rank + ".   " + scores[i].score);
+                    Entries[i].text = (scores[i].rank + ".   " + members[i].member_id + "   " + scores[i].score);
 
                 }
 
@@ -59,7 +62,7 @@ public class LeaderBoardController : MonoBehaviour
                     for (int i = scores.Length; i < MaxScores; i++)
                     {
                         //Entries[i].text = (i + 1).ToString() + ".   none"; //no reason to convert to string
-                        Entries[i].text = (i + 1) + "." + "  none";
+                        Entries[i].text = (i + 1) + "."+ members[i].member_id + "   " + "  none";
                     }
 
                     if (scores.Length == MaxScores)
@@ -68,7 +71,7 @@ public class LeaderBoardController : MonoBehaviour
                         for (int i = scores.Length; i < MaxScores; i++)
                         {
                             //Entries[i].text = (i + 1).ToString() + ".   none"; //no reason to convert to string
-                            Entries[i].text = (i + 1) + "."+ "none"; //fewer spaces to accommodate #10
+                            Entries[i].text = (i + 1) + "."+ members[i].member_id + "   " + "none"; //fewer spaces to accommodate #10
                         }
 
 
