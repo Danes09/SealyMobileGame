@@ -5,6 +5,7 @@ using UnityEngine;
 public class TagManager : MonoBehaviour
 {
     //this is just a change made to demonstrate github
+    //removing the change
 
 
     public static string WATER_TAG = "Water";
