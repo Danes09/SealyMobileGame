@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TagManager : MonoBehaviour
 {
+    //this is just a change made to demonstrate github
+
+
     public static string WATER_TAG = "Water";
     public static string DESTRUCTIBLE_TAG="Destructible";
     public static string WALL_TAG = "Wall";
