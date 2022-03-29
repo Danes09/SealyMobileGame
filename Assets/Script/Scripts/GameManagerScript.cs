@@ -31,6 +31,12 @@ public class GameManagerScript : MonoBehaviour
     [HideInInspector] public bool tufRevived = false;
 
     public static GameManagerScript Instance;
+
+    public GameObject tutorialBubble;
+    public GameObject[] tutorialBubbles; //delete the above one if we're going with multiple 
+
+    
+
     void Start()
     {
         // Simple Singleton.
@@ -42,9 +48,35 @@ public class GameManagerScript : MonoBehaviour
     
     void Update()
     {
+        checkIfTutorialNeeded();
+
         // Checks if the player has met the game end requirements.
         CheckGameEnd();
+
     }
+
+    /*If the tutorial bubble is active, pressing T unpauses the game and closes it. If it's not active, it opens the tutorial
+     bubble and pauses*/
+    void checkIfTutorialNeeded() 
+    {
+        if (Input.GetKeyDown(KeyCode.T) && tutorialBubble.activeInHierarchy) {
+
+            tutorialBubble.SetActive(false);
+            // set tutorial active to false
+            Time.timeScale = 1;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubble.activeInHierarchy)
+        {
+            tutorialBubble.SetActive(true);
+
+            Time.timeScale = 0;
+
+        }
+
+
+    }
+
 
     void CheckGameEnd()
     {
