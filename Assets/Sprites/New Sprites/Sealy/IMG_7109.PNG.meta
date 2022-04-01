@@ -90,12 +90,12 @@ TextureImporter:
       name: IMG_7109_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 26
         y: 288
         width: 269
         height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.068755545}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
