@@ -34,8 +34,9 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject tutorialBubble;
     public GameObject[] tutorialBubbles; //delete the above one if we're going with multiple 
+    bool tutorialNeeded;
 
-    
+
 
     void Start()
     {
@@ -59,23 +60,45 @@ public class GameManagerScript : MonoBehaviour
      bubble and pauses*/
     void checkIfTutorialNeeded() 
     {
-        if (Input.GetKeyDown(KeyCode.T) && tutorialBubble.activeInHierarchy) {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            tutorialNeeded = true;
+        }
 
-            tutorialBubble.SetActive(false);
+        
+        if(tutorialNeeded)
+        {
+
+            for (int i = 0; i < tutorialBubbles.Length; i++)
+            {
+                //tutorialBubbles[i].SetActive;
+
+            }
+        }
+        /*        for (int i = 0; i < tutorialBubbles.Length; i++)
+                {*/
+
+        /*if (Input.GetKeyDown(KeyCode.T) && tutorialBubbles[i].activeInHierarchy)
+        {
+
+            tutorialBubbles[i].SetActive(false);
             // set tutorial active to false
             Time.timeScale = 1;
         }
 
-        else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubble.activeInHierarchy)
+        else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubbles[i].activeInHierarchy)
         {
-            tutorialBubble.SetActive(true);
+            tutorialBubbles[i].SetActive(true);
 
             Time.timeScale = 0;
 
-        }
+        }*/
 
-
+        /*}*/
     }
+
+
+    
 
 
     void CheckGameEnd()
