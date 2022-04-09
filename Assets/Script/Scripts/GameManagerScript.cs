@@ -82,7 +82,7 @@ public class GameManagerScript : MonoBehaviour
 
         //tutorialCheck= GameObject.FindGameObjectWithTag(TagManager.TUTORIAL_TAG);
 
-        tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
+        //tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
 
         if (Input.GetKeyDown(KeyCode.T) && !tutorialCheck[].activeInHierarchy) // OPEN if not open
         {
