@@ -34,8 +34,8 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject tutorialBubble;
     public GameObject[] tutorialBubbles; //delete the above one if we're going with multiple 
-    
-    private GameObject tutorialCheck;
+
+    private GameObject[] tutorialCheck;
 
 
 
@@ -70,32 +70,50 @@ public class GameManagerScript : MonoBehaviour
 
     /*If the tutorial bubble is active, pressing T unpauses the game and closes it. If it's not active, it opens the tutorial
      bubble and pauses*/
-    void checkIfTutorialNeeded() 
+    void checkIfTutorialNeeded()
     {
         int i;
+        int which = 3;
+
+
+
+
+
+
         //tutorialCheck= GameObject.FindGameObjectWithTag(TagManager.TUTORIAL_TAG);
 
-        //tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
+        tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
 
-        if (Input.GetKeyDown(KeyCode.T) && tutorialCheck.activeInHierarchy) // OPEN if not open
+        if (Input.GetKeyDown(KeyCode.T) && !tutorialCheck[].activeInHierarchy) // OPEN if not open
         {
-            
-            
+
+
             Time.timeScale = 0;
             print("tutorial opened!");
         }
 
-        if(tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.T)){ //CLOSE the tutorial if open
+        if (tutorialCheck[].activeInHierarchy && Input.GetKeyDown(KeyCode.T)) //CLOSE the tutorial if open
+        { 
 
             Time.timeScale = 1;
             //tutorialBubbles[i].SetActive(false);
             print("tutorial CLOSED!");
 
-            for (int l=0; l<tutorialBubbles.Length; l++)
+
+
+            for (i = 0; i < tutorialBubbles.Length; i++)
+            {
+                // only the one matching i == which will be on, all others will be off
+                tutorialBubbles[i].SetActive(i == which);
+            }
+
+
+
+            /*for (int l=0; l<tutorialBubbles.Length; l++)
             {
                 tutorialBubbles[l].SetActive(false);
                 print("tutorial CLOSED for loop!");
-            }
+            }/*
 
 
 
@@ -115,33 +133,39 @@ public class GameManagerScript : MonoBehaviour
                 }
             
         }
+       
+        
+        
+        
+        //OLD
+        
         /*        for (int i = 0; i < tutorialBubbles.Length; i++)
                 {*/
 
-        /*if (Input.GetKeyDown(KeyCode.T) && tutorialBubbles[i].activeInHierarchy)
-        {
+            /*if (Input.GetKeyDown(KeyCode.T) && tutorialBubbles[i].activeInHierarchy)
+            {
 
-            tutorialBubbles[i].SetActive(false);
-            // set tutorial active to false
-            Time.timeScale = 1;
+                tutorialBubbles[i].SetActive(false);
+                // set tutorial active to false
+                Time.timeScale = 1;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubbles[i].activeInHierarchy)
+            {
+                tutorialBubbles[i].SetActive(true);
+
+                Time.timeScale = 0;
+
+            }*/
+
+            /*}*/
         }
 
-        else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubbles[i].activeInHierarchy)
-        {
-            tutorialBubbles[i].SetActive(true);
-
-            Time.timeScale = 0;
-
-        }*/
-
-        /*}*/
     }
 
 
-    
 
-
-    void CheckGameEnd()
+     public  void CheckGameEnd()
     {
         if (playerGameEndPoints == gameEndCondition)
         {
@@ -153,7 +177,7 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    public void AddGameEndPoints(int value)
+     public void AddGameEndPoints(int value)
     {
         // Adds points that contribute to the game end points.
         playerGameEndPoints = playerGameEndPoints + value;
