@@ -1,25 +1,13 @@
 fileFormatVersion: 2
-guid: be47442223dcab044953d3bf2a25e8be
+guid: 24bc9db21d8b36d439e9943d78877867
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8350983332100999741
-    second: IMG_7727_0
+      213: -2802112673738647133
+    second: IMG_7728_0
   - first:
-      213: -8446396384583038435
-    second: IMG_7727_4
-  - first:
-      213: 6816088051838121880
-    second: IMG_7727_5
-  - first:
-      213: 2594479576167133291
-    second: IMG_7727_6
-  - first:
-      213: -8642159287489480480
-    second: IMG_7727_7
-  - first:
-      213: -6457490258010136962
-    second: IMG_7727_1
+      213: 5573957060055037768
+    second: IMG_7728_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,127 +93,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_7727_0
+      name: IMG_7728_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 62
-        width: 327
-        height: 447
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3a861b5817a4e370800000000000000
-      internalID: 8350983332100999741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7727_4
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 158
-        width: 74
+        x: 413
+        y: 209
+        width: 86
         height: 146
       alignment: 9
-      pivot: {x: 0.7476431, y: 0.77286434}
+      pivot: {x: 0.29444957, y: 0.7861836}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1ac8c83d3f58ca80800000000000000
-      internalID: -8446396384583038435
+      spriteID: 3a910359e55ec19d0800000000000000
+      internalID: -2802112673738647133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_7727_5
+      name: IMG_7728_1
       rect:
         serializedVersion: 2
-        x: 417
-        y: 70
-        width: 86
-        height: 161
+        x: 414
+        y: 80
+        width: 87
+        height: 125
       alignment: 9
-      pivot: {x: 0.3398196, y: 0.78559124}
+      pivot: {x: 0.6018273, y: 0.7959102}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 897789f48fb979e50800000000000000
-      internalID: 6816088051838121880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7727_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 117
-        height: 59
-      alignment: 9
-      pivot: {x: 0.49319014, y: 0.86462104}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b60b27aad61710420800000000000000
-      internalID: 2594479576167133291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7727_7
-      rect:
-        serializedVersion: 2
-        x: 313
-        y: 15
-        width: 121
-        height: 67
-      alignment: 9
-      pivot: {x: 0.65803593, y: 0.6070282}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e8b8d88ae1e01880800000000000000
-      internalID: -8642159287489480480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_7727_1
-      rect:
-        serializedVersion: 2
-        x: 334
-        y: 352
-        width: 171
-        height: 117
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7e92c6d2d26266a0800000000000000
-      internalID: -6457490258010136962
+      spriteID: 8477cddf96caa5d40800000000000000
+      internalID: 5573957060055037768
       vertices: []
       indices: 
       edges: []
