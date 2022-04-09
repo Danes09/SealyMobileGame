@@ -34,7 +34,8 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject tutorialBubble;
     public GameObject[] tutorialBubbles; //delete the above one if we're going with multiple 
-    bool tutorialNeeded;
+    
+    private GameObject tutorialCheck;
 
 
 
@@ -46,7 +47,17 @@ public class GameManagerScript : MonoBehaviour
         // Sets the Script accordingly.
         camControlScript = this.GetComponent<CameraControlScript>();
     }
-    
+
+    /* int exceptionObj = 2; //Position of object in the array
+        for (int i = 0; i < myObjs.Length; i++)
+        {
+            if (i != exceptionObj) // If not the exception ID
+                myObjs[i].SetActive(false);
+        }
+     */
+
+
+
     void Update()
     {
         checkIfTutorialNeeded();
@@ -56,24 +67,53 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
+
     /*If the tutorial bubble is active, pressing T unpauses the game and closes it. If it's not active, it opens the tutorial
      bubble and pauses*/
     void checkIfTutorialNeeded() 
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        int i;
+        //tutorialCheck= GameObject.FindGameObjectWithTag(TagManager.TUTORIAL_TAG);
+
+        //tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
+
+        if (Input.GetKeyDown(KeyCode.T) && tutorialCheck.activeInHierarchy) // OPEN if not open
         {
-            tutorialNeeded = true;
+            
+            
+            Time.timeScale = 0;
+            print("tutorial opened!");
         }
 
-        
-        if(tutorialNeeded)
-        {
+        if(tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.T)){ //CLOSE the tutorial if open
 
-            for (int i = 0; i < tutorialBubbles.Length; i++)
+            Time.timeScale = 1;
+            //tutorialBubbles[i].SetActive(false);
+            print("tutorial CLOSED!");
+
+            for (int l=0; l<tutorialBubbles.Length; l++)
             {
-                //tutorialBubbles[i].SetActive;
-
+                tutorialBubbles[l].SetActive(false);
+                print("tutorial CLOSED for loop!");
             }
+
+
+
+        }
+
+        if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
+        {
+            tutorialBubbles[0].SetActive(false);
+
+                for  (i = 1; i < tutorialBubbles.Length; i++)
+                {
+                    tutorialBubbles[i].SetActive(true);
+                    i++;
+
+
+
+                }
+            
         }
         /*        for (int i = 0; i < tutorialBubbles.Length; i++)
                 {*/

@@ -14,6 +14,7 @@ TagManager:
   - Object
   - Ally
   - Balloon
+  - Tutorial
   layers:
   - Default
   - TransparentFX
