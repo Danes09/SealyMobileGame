@@ -36,7 +36,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject[] tutorialBubbles; //delete the above one if we're going with multiple 
 
     private GameObject[] tutorialCheck;
-
+    int exceptArrayId;
 
 
     void Start()
@@ -72,9 +72,27 @@ public class GameManagerScript : MonoBehaviour
      bubble and pauses*/
     void checkIfTutorialNeeded()
     {
-        int i;
-        int which = 3;
+        tutorialBubbles[1].SetActive(false);
+        exceptArrayId = 1;
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            for (int i = 0; i < tutorialBubbles.Length; i++)
+            {
+                if (i == exceptArrayId)
+                {
+                    tutorialBubbles[i].SetActive(true);
+                    i++;
+                }
+                else
+                {
+                    tutorialBubbles[i].SetActive(false);
+                }
 
+            }
+
+
+        }
+    }
 
 
 
@@ -83,7 +101,7 @@ public class GameManagerScript : MonoBehaviour
         //tutorialCheck= GameObject.FindGameObjectWithTag(TagManager.TUTORIAL_TAG);
 
         //tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
-
+        /* CLOSED TO TRY OUT STACKOVERFLOW code
         if (Input.GetKeyDown(KeyCode.T) && !tutorialCheck[].activeInHierarchy) // OPEN if not open
         {
 
@@ -105,63 +123,63 @@ public class GameManagerScript : MonoBehaviour
             {
                 // only the one matching i == which will be on, all others will be off
                 tutorialBubbles[i].SetActive(i == which);
-            }
+            } CLOSED TO TRY OUT CODE GIVEN*/
 
 
 
-            /*for (int l=0; l<tutorialBubbles.Length; l++)
-            {
-                tutorialBubbles[l].SetActive(false);
-                print("tutorial CLOSED for loop!");
-            }/*
-
-
-
-        }
-
-        if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
+        /*for (int l=0; l<tutorialBubbles.Length; l++)
         {
-            tutorialBubbles[0].SetActive(false);
-
-                for  (i = 1; i < tutorialBubbles.Length; i++)
-                {
-                    tutorialBubbles[i].SetActive(true);
-                    i++;
+            tutorialBubbles[l].SetActive(false);
+            print("tutorial CLOSED for loop!");
+        }/*
 
 
-
-                }
-            
-        }
-       
-        
-        
-        
-        //OLD
-        
-        /*        for (int i = 0; i < tutorialBubbles.Length; i++)
-                {*/
-
-            /*if (Input.GetKeyDown(KeyCode.T) && tutorialBubbles[i].activeInHierarchy)
-            {
-
-                tutorialBubbles[i].SetActive(false);
-                // set tutorial active to false
-                Time.timeScale = 1;
-            }
-
-            else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubbles[i].activeInHierarchy)
-            {
-                tutorialBubbles[i].SetActive(true);
-
-                Time.timeScale = 0;
-
-            }*/
-
-            /*}*/
-        }
 
     }
+
+    if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
+    {
+        tutorialBubbles[0].SetActive(false);
+
+            for  (i = 1; i < tutorialBubbles.Length; i++)
+            {
+                tutorialBubbles[i].SetActive(true);
+                i++;
+
+
+
+            }
+
+    }
+
+
+
+
+    //OLD
+
+    /*        for (int i = 0; i < tutorialBubbles.Length; i++)
+            {*/
+
+        /*if (Input.GetKeyDown(KeyCode.T) && tutorialBubbles[i].activeInHierarchy)
+        {
+
+            tutorialBubbles[i].SetActive(false);
+            // set tutorial active to false
+            Time.timeScale = 1;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubbles[i].activeInHierarchy)
+        {
+            tutorialBubbles[i].SetActive(true);
+
+            Time.timeScale = 0;
+
+        }*/
+
+        /*}*/
+    
+
+    
 
 
 
