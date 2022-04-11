@@ -29,9 +29,21 @@ public class FallingCrate : SpawnableItem
         Destroy(this.gameObject, 5.0f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /* IF THE CRATE HITS THE PLAYER, CAUSE DAMAGE. IF IT HITS THE INVISIBLE RECTANGLE AT THE BOTTOM, DISAPPEAR*/
+    private void OnCollisionEnter2D(Collision2D other) 
 	{
-		TakeDamage(collision);
+        if (other.gameObject.tag == TagManager.PLAYER_TAG)
+        {
+            print("took damage!");
+            TakeDamage(other);
+        }
+
+        else if (other.gameObject.tag == TagManager.BARRIER_TAG)
+        {
+            print("destroying CRATE!");
+            Destroy(gameObject);
+        }
+		
 	}
 
     public void SetStats(Vector2 tItemScale, float tBombChance, float tEnergyChance, float tFoodChance, float tHealChance, float tPointsChance, int tEndValue)
