@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
 	//! Use for Jump
 	[SerializeField] private bool isJumping = false;
 	public GameObject exitwaterBodytrigger;
+	public GameObject enterwaterBodytrigger;
+	public GameObject WallColision;
+	public GameObject JumpColdown;
+	[SerializeField] private bool CheckWater = true;
+	private bool isDrive = false;
 	private Rigidbody2D rd2d;
 
 	private void Awake()
@@ -68,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
 		OnStunned?.Invoke();
 		
 		StopPlayer();
+
+		rd2d.gravityScale = 0f;
 	}
 
 	public void StopPlayer()
@@ -173,29 +180,69 @@ public class PlayerMovement : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		isJumping = true;
+		if (CheckWater == true)
+		{
+			isJumping = true;
+			StartCoroutine(OutWater());
+		}
+
+		if (CheckWater == false)
+		{
+			StartCoroutine(InWater());
+
+		}
+
 	}
 
-	IEnumerator EnterWater()
+	IEnumerator OutWater()
+	{
+		yield return new WaitForSeconds(1.0f);
+		exitwaterBodytrigger.SetActive(false);
+		enterwaterBodytrigger.SetActive(true);
+		CheckWater = false;
+	}
+
+	IEnumerator InWater()
+	{
+		yield return new WaitForSeconds(0.4f);
+		exitwaterBodytrigger.SetActive(true);
+		enterwaterBodytrigger.SetActive(false);
+		WallColision.SetActive(true);
+		JumpColdown.SetActive(false);
+		isDrive = true;
+		CheckWater = true;
+	}
+
+	IEnumerator JColdown()
+	{
+		yield return new WaitForSeconds(10.0f);
+		WallColision.SetActive(false);
+		JumpColdown.SetActive(true);
+	}
+
+	/*IEnumerator EnterWater()
 	{
 		yield return new WaitForSeconds(1.5f);
 		drive();
 		Debug.Log("StartCounting");
-	}
+	}*/
 
 	private void Update()
 	{
 		if (isJumping == true)
 		{
 			jump();
-			exitwaterBodytrigger.SetActive(false);
-			StartCoroutine(EnterWater());
+		}
+
+		if (isDrive == true)
+		{
+			drive();
 		}
 
 	}
 	private void jump()
 	{
-		float jumpVelocity = 1f;
+		float jumpVelocity = 3f;
 		rd2d.velocity = Vector2.up * jumpVelocity;
 		rd2d.gravityScale = 0.5f;
 		isJumping = false;
@@ -206,8 +253,10 @@ public class PlayerMovement : MonoBehaviour
 	{
 		rd2d.gravityScale = 0f;
 		rd2d.velocity = Vector2.zero;
+		isDrive = false;
 		StopPlayer();
-		exitwaterBodytrigger.SetActive(true);
+		StartCoroutine(JColdown());
+		Debug.Log("Drive");
 	}
 }
 
