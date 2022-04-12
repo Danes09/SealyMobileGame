@@ -30,15 +30,15 @@ public class FallingCrate : SpawnableItem
     }
 
     /* IF THE CRATE HITS THE PLAYER, CAUSE DAMAGE. IF IT HITS THE INVISIBLE RECTANGLE AT THE BOTTOM, DISAPPEAR*/
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnCollisionEnter2D(Collision2D collision) 
 	{
-        if (other.gameObject.tag == TagManager.PLAYER_TAG)
+        if (collision.gameObject.tag == TagManager.PLAYER_TAG)
         {
             print("took damage!");
-            TakeDamage(other);
+            TakeDamage(collision);
         }
 
-        else if (other.gameObject.tag == TagManager.BARRIER_TAG)
+        else if (collision.gameObject.tag == TagManager.BARRIER_TAG)
         {
             print("destroying CRATE!");
             Destroy(gameObject);
@@ -56,18 +56,19 @@ public class FallingCrate : SpawnableItem
         healChance = tHealChance;
         pointsChance = tPointsChance;
     }
-
+    
 	public void TakeDamage(Collision2D collision)
 	{
 		BouncingBall ball = collision.gameObject.GetComponent<BouncingBall>();
 		if (ball)
 		{
+            print("ball hits crate!");
 			SpawnItem();
 			OnCrateDestroyedByDamage?.Invoke();
 			return;
 		}
 	}
-
+    
 	public void DealDamage(Collision2D collision)
 	{
 		PlayerMovement player = collision.gameObject.GetComponentInParent<PlayerMovement>();
