@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
 	private bool isDrive = false;
 	private Rigidbody2D rd2d;
 
+	//!Use to stop player on move in air
+	public GameObject tapZone;
+
 	private void Awake()
 	{
 		rd2d = transform.GetComponent<Rigidbody2D>();
@@ -111,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void PlayerMove()
 	{
-		this.transform.Translate(currentDirection * movementSpeed * Time.deltaTime, Space.World);
+		this.transform.Translate(currentDirection * movementSpeed * Time.deltaTime, Space.World);	
 	}
 
 	private void PlayerSink()
@@ -220,13 +223,6 @@ public class PlayerMovement : MonoBehaviour
 		JumpColdown.SetActive(true);
 	}
 
-	/*IEnumerator EnterWater()
-	{
-		yield return new WaitForSeconds(1.5f);
-		drive();
-		Debug.Log("StartCounting");
-	}*/
-
 	private void Update()
 	{
 		if (isJumping == true)
@@ -246,6 +242,7 @@ public class PlayerMovement : MonoBehaviour
 		rd2d.velocity = Vector2.up * jumpVelocity;
 		rd2d.gravityScale = 0.5f;
 		isJumping = false;
+		tapZone.SetActive(false);
 		Debug.Log("Jump");
 	}
 
@@ -255,6 +252,7 @@ public class PlayerMovement : MonoBehaviour
 		rd2d.velocity = Vector2.zero;
 		isDrive = false;
 		StopPlayer();
+		tapZone.SetActive(true);
 		StartCoroutine(JColdown());
 		Debug.Log("Drive");
 	}
