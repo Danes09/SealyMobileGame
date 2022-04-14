@@ -24,6 +24,5 @@ public class TagManager : MonoBehaviour
     
     public static string PLAYER_TAG = "Player";
     public static string TUTORIAL_TAG = "Tutorial";
-    public static string BARRIER_TAG="Barrier";
 
 }
