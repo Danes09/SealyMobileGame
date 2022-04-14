@@ -4608,7 +4608,7 @@ GameObject:
   - component: {fileID: 1954362090}
   m_Layer: 0
   m_Name: BarrierToPreventSealyFromFalling
-  m_TagString: Untagged
+  m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5358,6 +5358,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5636779630132546039, guid: eac47c021bf44e04a99704c56e5ec77f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8611944081417593858, guid: eac47c021bf44e04a99704c56e5ec77f,
         type: 3}
       propertyPath: playerHealth
@@ -5416,7 +5421,7 @@ PrefabInstance:
     - target: {fileID: 8611944081417593862, guid: eac47c021bf44e04a99704c56e5ec77f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.17
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 8611944081417593862, guid: eac47c021bf44e04a99704c56e5ec77f,
         type: 3}

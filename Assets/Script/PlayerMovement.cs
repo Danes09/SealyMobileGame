@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5.0f;
+	public static PlayerMovement instance;
+
+
+	[SerializeField] private float movementSpeed = 5.0f;
 	[SerializeField] private float sinkSpeed = 1.0f;
 	[SerializeField] private float frontCheckDistance = 0.7f;
 	[SerializeField] private LayerMask wallDetectionMask;
@@ -34,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
 
 	//Use to Stop Sealy Swim in air
 	public GameObject tapZone;
+
+
+	
+
+
 
 	private void Awake()
 	{
@@ -115,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		this.transform.Translate(currentDirection * movementSpeed * Time.deltaTime, Space.World);
 	}
+
+
 
 	private void PlayerSink()
 	{
@@ -220,6 +230,16 @@ public class PlayerMovement : MonoBehaviour
 		yield return new WaitForSeconds(10.0f);
 		WallColision.SetActive(false);
 		JumpColdown.SetActive(true);
+	}
+
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == TagManager.BARRIER_TAG)
+		{
+			print("barrier is touched!");
+			rd2d.velocity = new Vector2(rd2d.velocity.x, rd2d.velocity.y+1.0f);
+
+		}
 	}
 
 
