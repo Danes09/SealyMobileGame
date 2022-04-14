@@ -15,7 +15,6 @@ TagManager:
   - Ally
   - Balloon
   - Tutorial
-  - Barrier
   layers:
   - Default
   - TransparentFX
