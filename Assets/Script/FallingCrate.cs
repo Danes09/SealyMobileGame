@@ -29,7 +29,6 @@ public class FallingCrate : SpawnableItem
         Destroy(this.gameObject, 5.0f);
     }
 
-<<<<<<< HEAD
     /* IF THE CRATE HITS THE PLAYER, CAUSE DAMAGE. IF IT HITS THE INVISIBLE RECTANGLE AT THE BOTTOM, DISAPPEAR*/
     private void OnCollisionEnter2D(Collision2D collision) 
 	{
@@ -45,11 +44,6 @@ public class FallingCrate : SpawnableItem
             Destroy(gameObject);
         }
 		
-=======
-    private void OnCollisionEnter2D(Collision2D collision)
-	{
-		TakeDamage(collision);
->>>>>>> parent of 7215991 (Barrier to prevent sealy from falling off the map)
 	}
 
     public void SetStats(Vector2 tItemScale, float tBombChance, float tEnergyChance, float tFoodChance, float tHealChance, float tPointsChance, int tEndValue)
