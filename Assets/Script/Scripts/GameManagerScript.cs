@@ -18,6 +18,12 @@ public enum ItemDrop
 
 public class GameManagerScript : MonoBehaviour
 {
+    //Fill Water
+    public ZoneTransitionManager zone;
+    public float waterFillYOffset = 2f;
+    public float waterFillTime = 0.5f;
+    [SerializeField] public bool isFill = false;
+
     private CameraControlScript camControlScript;
     private bool gamePaused = false;
 
@@ -65,6 +71,18 @@ public class GameManagerScript : MonoBehaviour
         // Checks if the player has met the game end requirements.
         CheckGameEnd();
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (isFill == true)
+        {
+            zone.waterBody.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+            zone.waterSurface.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+
+
+            StartCoroutine(FillWaterInEnd());
+        }
     }
 
 
@@ -191,11 +209,18 @@ public class GameManagerScript : MonoBehaviour
             // Do level end UI here.
 
             // Temp placement to end the game.
-            ReturnToMainMenu();
+            //ReturnToMainMenu();
         }
     }
 
-     public void AddGameEndPoints(int value)
+    IEnumerator FillWaterInEnd()
+    {
+        yield return new WaitForSeconds(2f);
+
+        isFill = false;
+    }
+
+    public void AddGameEndPoints(int value)
     {
         // Adds points that contribute to the game end points.
         playerGameEndPoints = playerGameEndPoints + value;

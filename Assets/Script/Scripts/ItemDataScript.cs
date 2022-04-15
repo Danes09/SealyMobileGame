@@ -56,6 +56,7 @@ public class ItemDataScript : MonoBehaviour
     {
         // #Critical: Button gives 5 Game End points.
         GameManagerScript.Instance.AddGameEndPoints(GameManagerScript.Instance.buttonPoints);
+        GameManagerScript.Instance.isFill = true;
         Destroy(this.gameObject);
     }
 
