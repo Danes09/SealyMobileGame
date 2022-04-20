@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: b2fc85531da045d43ba14ba9350d57e9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6609375046959625374
+    second: Tileset_WaterDown_2
+  - first:
+      213: 7366574470463254997
+    second: Tileset_WaterDown_3
+  - first:
+      213: -2177808093146164864
+    second: Tileset_WaterDown_4
+  - first:
+      213: 1613542642844766932
+    second: Tileset_WaterDown_5
+  - first:
+      213: 8660011823243441349
+    second: Tileset_WaterDown_6
+  - first:
+      213: -5350404340410604016
+    second: Tileset_WaterDown_7
+  - first:
+      213: 2917240512787585943
+    second: Tileset_WaterDown_8
+  - first:
+      213: -1752779179105635961
+    second: Tileset_WaterDown_9
+  - first:
+      213: 2551714296858438864
+    second: Tileset_WaterDown_10
+  - first:
+      213: -967539330878594200
+    second: Tileset_WaterDown_11
+  - first:
+      213: 5232559625627464262
+    second: Tileset_WaterDown_12
+  - first:
+      213: 3077810332720014642
+    second: Tileset_WaterDown_13
+  - first:
+      213: -3577608049908646946
+    second: Tileset_WaterDown_14
+  - first:
+      213: 2562554006344727151
+    second: Tileset_WaterDown_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tileset_WaterDown_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 379
+        width: 130
+        height: 644
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dacf6c5f84ae7be0800000000000000
+      internalID: -1477562692092835118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_1
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 377
+        width: 125
+        height: 647
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 7, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e4396f863750180800000000000000
+      internalID: -9149780173282652559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_2
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 375
+        width: 109
+        height: 649
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94fb55569739bb50800000000000000
+      internalID: 6609375046959625374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_3
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 375
+        width: 124
+        height: 649
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d17c6b73745b3660800000000000000
+      internalID: 7366574470463254997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_4
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 375
+        width: 133
+        height: 649
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0815d0be31fd6c1e0800000000000000
+      internalID: -2177808093146164864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_5
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 370
+        width: 118
+        height: 654
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d215b81c74746610800000000000000
+      internalID: 1613542642844766932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_6
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 373
+        width: 100
+        height: 651
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c4bb1bdeda8e2870800000000000000
+      internalID: 8660011823243441349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_7
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 368
+        width: 113
+        height: 656
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0162e1d999b8fb5b0800000000000000
+      internalID: -5350404340410604016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_8
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 367
+        width: 94
+        height: 657
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b15194ace1c7820800000000000000
+      internalID: 2917240512787585943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_9
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 368
+        width: 98
+        height: 656
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78135bb8f90eca7e0800000000000000
+      internalID: -1752779179105635961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_10
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 368
+        width: 85
+        height: 656
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc688822a2896320800000000000000
+      internalID: 2551714296858438864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_11
+      rect:
+        serializedVersion: 2
+        x: 1437
+        y: 366
+        width: 71
+        height: 658
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86323c4da1c9292f0800000000000000
+      internalID: -967539330878594200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_12
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 367
+        width: 73
+        height: 657
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64273979149cd9840800000000000000
+      internalID: 5232559625627464262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_13
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 367
+        width: 80
+        height: 657
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235adcfc03496ba20800000000000000
+      internalID: 3077810332720014642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_14
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 367
+        width: 56
+        height: 657
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbfd9ffe68c95ec0800000000000000
+      internalID: -3577608049908646946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_WaterDown_15
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 366
+        width: 71
+        height: 658
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a7ee1ba45009320800000000000000
+      internalID: 2562554006344727151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
