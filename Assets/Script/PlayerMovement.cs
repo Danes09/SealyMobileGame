@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 	private bool isDrive = false;
 	private Rigidbody2D rd2d;
 
+	float pushUpForceFromBarrier=1.0f;
+
 	//Use to Stop Sealy Swim in air
 	public GameObject tapZone;
 
@@ -232,12 +234,12 @@ public class PlayerMovement : MonoBehaviour
 		JumpColdown.SetActive(true);
 	}
 
-	private void OnCollisionEnter2D(Collision2D other)
+	private void OnCollisionEnter2D(Collision2D other) //Code to push Sealy up once he hits the barrier
 	{
 		if (other.gameObject.tag == TagManager.BARRIER_TAG)
 		{
 			print("barrier is touched!");
-			rd2d.velocity = new Vector2(rd2d.velocity.x, rd2d.velocity.y+1.0f);
+			rd2d.velocity = new Vector2(rd2d.velocity.x, rd2d.velocity.y+pushUpForceFromBarrier);
 
 		}
 	}
