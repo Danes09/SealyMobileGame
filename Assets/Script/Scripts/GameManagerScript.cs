@@ -91,7 +91,7 @@ public class GameManagerScript : MonoBehaviour
 /*If all the tutorial bubbles are closed, open the first one*/
     void checkIfTutorialNeeded()
     {
-        //tutorialBubbles[].SetActive(false);
+
         if (Input.GetKeyDown(KeyCode.T) && 
             !tutorialBubbles[0].activeInHierarchy &&
             !tutorialBubbles[1].activeInHierarchy &&
@@ -99,15 +99,21 @@ public class GameManagerScript : MonoBehaviour
             !tutorialBubbles[3].activeInHierarchy)
         {
 
-
             openTutorial0();
 
+        }   
+        /*If even one tutorial bubble is open, close all of them when T is pressed*/
+        
+        else if(Input.GetKey(KeyCode.T) && 
+            (tutorialBubbles[0].activeInHierarchy||
+            tutorialBubbles[1].activeInHierarchy||
+            tutorialBubbles[2].activeInHierarchy||
+            tutorialBubbles[3].activeInHierarchy) )
+        {
+            closeAllTutorials();
         }
-        
-        
 
 
-        
     }
 
     void openTutorial0()
@@ -146,6 +152,7 @@ public class GameManagerScript : MonoBehaviour
         tutorialBubbles[3].SetActive(true);
     }
 
+    /* Use a button to close all tutorials*/
     void closeAllTutorials()
     {
         tutorialBubbles[0].SetActive(false);
