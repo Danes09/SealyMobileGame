@@ -2485,18 +2485,11 @@ MonoBehaviour:
   gameEndCondition: 12
   buttonPoints: 5
   tufRevived: 0
-  tutorialBubble: {fileID: 316158550}
   tutorialBubbles:
   - {fileID: 316158550}
   - {fileID: 9866777}
   - {fileID: 667645189}
   - {fileID: 311535654}
-  - {fileID: 1521352438}
-  - {fileID: 1125274018}
-  - {fileID: 1499632143}
-  - {fileID: 839979704}
-  - {fileID: 572512123}
-  - {fileID: 195316090}
 --- !u!4 &1074259118
 Transform:
   m_ObjectHideFlags: 0
