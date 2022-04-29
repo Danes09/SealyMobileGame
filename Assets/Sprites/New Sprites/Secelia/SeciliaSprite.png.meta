@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 9419a8747e7a85f42b0d1a873f1ce732
+guid: 93d5d3184f2c2cc45a9af8a9dd3203be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6481781095329854313
-    second: Tuff Sprite_0
+      213: 7150823884859589671
+    second: SeciliaSprite_0
   - first:
-      213: -1286228953101804058
-    second: Tuff Sprite_1
+      213: -1111123797191429094
+    second: SeciliaSprite_1
   - first:
-      213: -2331950951133164429
-    second: Tuff Sprite_2
+      213: 6376593182321971057
+    second: SeciliaSprite_2
   - first:
-      213: -5733218595316280665
-    second: Tuff Sprite_3
-  - first:
-      213: 5180529517215800611
-    second: Tuff Sprite_4
+      213: 4846742762417157274
+    second: SeciliaSprite_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,106 +99,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tuff Sprite_0
+      name: SeciliaSprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 270
-        width: 286
-        height: 242
-      alignment: 9
-      pivot: {x: 0.50000006, y: 0.029185649}
+        x: 10
+        y: 75
+        width: 275
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9637af27099e3f950800000000000000
-      internalID: 6481781095329854313
+      spriteID: 7244f64cf64dc3360800000000000000
+      internalID: 7150823884859589671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tuff Sprite_1
+      name: SeciliaSprite_1
       rect:
         serializedVersion: 2
-        x: 312
-        y: 218
-        width: 102
-        height: 147
-      alignment: 9
-      pivot: {x: 0.29690373, y: 0.83605003}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ed5b86f495662ee0800000000000000
-      internalID: -1286228953101804058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tuff Sprite_2
-      rect:
-        serializedVersion: 2
-        x: 418
-        y: 345
-        width: 91
-        height: 143
-      alignment: 9
-      pivot: {x: 0.74515843, y: 0.8120196}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37cc21417fe33afd0800000000000000
-      internalID: -2331950951133164429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tuff Sprite_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 10
-        width: 284
-        height: 245
-      alignment: 9
-      pivot: {x: 0.49438906, y: 0.939033}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a2528e30148f60b0800000000000000
-      internalID: -5733218595316280665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tuff Sprite_4
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 19
+        x: 325
+        y: 323
         width: 153
-        height: 151
-      alignment: 9
-      pivot: {x: 0.5729069, y: 0.8007654}
+        height: 146
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32dd216f520f4e740800000000000000
-      internalID: 5180529517215800611
+      spriteID: a14fbee1bce7490f0800000000000000
+      internalID: -1111123797191429094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeciliaSprite_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 93
+        width: 69
+        height: 163
+      alignment: 9
+      pivot: {x: 0.6854031, y: 0.940507}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f8a75f6b53e7850800000000000000
+      internalID: 6376593182321971057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeciliaSprite_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 94
+        width: 68
+        height: 162
+      alignment: 9
+      pivot: {x: 0.3373404, y: 0.9332978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94f19ffcd6134340800000000000000
+      internalID: 4846742762417157274
       vertices: []
       indices: 
       edges: []
