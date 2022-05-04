@@ -19,6 +19,7 @@ public enum ItemDrop
 public class GameManagerScript : MonoBehaviour
 {
     //Fill Water
+    public GameObject Pipe;
     public ZoneTransitionManager zone;
     public float waterFillYOffset = 2f;
     public float waterFillTime = 0.5f;
@@ -79,13 +80,23 @@ public class GameManagerScript : MonoBehaviour
     {
         if (isFill == true)
         {
-            zone.waterBody.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
-            zone.waterSurface.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
-
-
+            Pipe.SetActive(true);
+            StartCoroutine(FillWaterTime());
             StartCoroutine(FillWaterInEnd());
+
         }
     }
+
+    IEnumerator FillWaterTime()
+    {
+        yield return new WaitForSeconds(2);
+
+        zone.waterBody.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+        zone.waterSurface.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+
+        
+    }
+
 
 
 /*If all the tutorial bubbles are closed, open the first one*/

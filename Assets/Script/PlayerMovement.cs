@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
 	//Use to Stop Sealy Swim in air
 	public GameObject tapZone;
+	public bool inAir = false;
 
 
 	
@@ -86,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
 		
 		StopPlayer();
 
-		rd2d.gravityScale = 0f;
 	}
 
 	public void StopPlayer()
