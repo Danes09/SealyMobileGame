@@ -205,6 +205,7 @@ public class PlayerMovement : MonoBehaviour
 			StartCoroutine(InWater());
 
 		}
+		
 
 	}
 
@@ -266,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
 		rd2d.gravityScale = 0.5f;
 		isJumping = false;
 		tapZone.SetActive(false);
-		Debug.Log("Jump");
+		
 	}
 
 	public void drive()
@@ -277,7 +278,7 @@ public class PlayerMovement : MonoBehaviour
 		StopPlayer();
 		tapZone.SetActive(true);
 		StartCoroutine(JColdown());
-		Debug.Log("Drive");
+		
 	}
 }
 

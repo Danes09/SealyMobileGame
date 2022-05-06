@@ -22,7 +22,7 @@ public class BouncingBall : MonoBehaviour
 
 		if (bounceFromWater && currentBounceCount >= maximumBounces)
 		{
-			Debug.Log("Stop");
+			//Debug.Log("Stop");
 			ApplyTravelDir(Vector2.zero);
 			rb2d.velocity = Vector2.zero;
 			currentBounceCount = 0;
@@ -107,7 +107,7 @@ public class BouncingBall : MonoBehaviour
     {
         if (rb2d.IsSleeping())
         {
-            Debug.Log("BALL STOPPED MOVING SO FORCE IT TO MOVE");
+            //Debug.Log("BALL STOPPED MOVING SO FORCE IT TO MOVE");
             rb2d.AddForce(new Vector2(Random.Range(-20.0f, 20.0f), 0.0f));
         }
     }
