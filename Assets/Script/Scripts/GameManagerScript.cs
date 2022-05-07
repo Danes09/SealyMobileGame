@@ -129,6 +129,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void openTutorial0()
     {
+        Time.timeScale = 0;
 
         tutorialBubbles[0].SetActive(true);
         tutorialBubbles[1].SetActive(false);
@@ -138,6 +139,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void openTutorial1()
     {
+        Time.timeScale = 0;
+
         tutorialBubbles[0].SetActive(false);
         tutorialBubbles[1].SetActive(true);
         tutorialBubbles[2].SetActive(false);
@@ -148,6 +151,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void openTutorial2()
     {
+        Time.timeScale = 0;
+
         tutorialBubbles[0].SetActive(false);
         tutorialBubbles[1].SetActive(false);
         tutorialBubbles[2].SetActive(true);
@@ -157,10 +162,13 @@ public class GameManagerScript : MonoBehaviour
 
     public void openTutorial3()
     {
+        Time.timeScale = 0;
+
         tutorialBubbles[0].SetActive(false);
         tutorialBubbles[1].SetActive(false);
         tutorialBubbles[2].SetActive(false);
         tutorialBubbles[3].SetActive(true);
+
     }
 
     /* Use a button to close all tutorials*/
@@ -170,6 +178,8 @@ public class GameManagerScript : MonoBehaviour
         tutorialBubbles[1].SetActive(false);
         tutorialBubbles[2].SetActive(false);
         tutorialBubbles[3].SetActive(false);
+
+        Time.timeScale = 1;
     }
 
 
