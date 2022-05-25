@@ -30,6 +30,13 @@ public class PlayerManagerScript : MonoBehaviour
     private bool playerIsMoving = false;
 
     public static PlayerManagerScript Instance;
+
+    /*For Powerups*/
+    public bool isInvulnerable = false;
+    private float invulnerabilityTime = 5f;
+
+
+
     void Start()
     {
         // Simple singleton;
@@ -44,7 +51,36 @@ public class PlayerManagerScript : MonoBehaviour
     void Update()
     {
         CapPlayerData();
+
+        /*Temporarily set to key bind I. Can be purchased at the shop? 
+         Maybe activated by key I after purchasing at the shop*/
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            enableInvulnerability();
+        }
+        
     }
+    
+    
+    
+
+     void enableInvulnerability()
+    {
+        isInvulnerable = true;
+        print("Invulnerability: " + isInvulnerable);
+        
+        StartCoroutine(turnOffInvulnerability());
+    }
+
+    IEnumerator turnOffInvulnerability()
+    {
+        yield return new WaitForSeconds(invulnerabilityTime);
+        print("Invulnerability ended!");
+        isInvulnerable = false;
+
+
+    }
+
 
     void CapPlayerData()
     {
@@ -79,7 +115,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void TakeDamageFromCrates()
     {
-        EditPlayerHealth(false, damageTakenFromCrates);
+        if (!isInvulnerable) {
+            EditPlayerHealth(false, damageTakenFromCrates);
+        }
+        
     }
 
     public void SwitchDirectionEnergy()
@@ -106,7 +145,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void TakeDamageFromBomb()
     {
-        EditPlayerHealth(false, damageTakenFromBomb);
+        if (!isInvulnerable)
+        {
+            EditPlayerHealth(false, damageTakenFromBomb);
+        }
     }
 
     public void GainEnergyFromItem()
@@ -133,7 +175,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void TakeDamageFromSpear(float damage)
     {
-        EditPlayerHealth(false, damage);
+        if (!isInvulnerable)
+        {
+            EditPlayerHealth(false, damage);
+        }
     }
 
     public void GainPoints(float numberOfPoints)
