@@ -194,13 +194,13 @@ public class PlayerMovement : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (CheckWater == true)
+		if (CheckWater == true && collision.CompareTag("WaterSurface"))
 		{
 			isJumping = true;
 			StartCoroutine(OutWater());
 		}
 
-		if (CheckWater == false)
+		if (CheckWater == false && collision.CompareTag("WaterSurface"))
 		{
 			StartCoroutine(InWater());
 

@@ -276,7 +276,7 @@ if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
 
     IEnumerator FillWaterInEnd()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(4);
 
         isFill = false;
     }
