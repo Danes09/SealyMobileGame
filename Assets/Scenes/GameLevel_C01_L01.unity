@@ -2820,6 +2820,8 @@ MonoBehaviour:
   waterFillYOffset: 2
   waterFillTime: 0.5
   isFill: 0
+  JumpCooldown: {fileID: 1914790302}
+  Walldectect: {fileID: 728203463}
   gameLevelName: GameLevel_C01_L01
   playerGameEndPoints: 0
   gameEndCondition: 12
