@@ -1257,7 +1257,7 @@ MonoBehaviour:
   player: {fileID: 1333170048}
   playerball: {fileID: 368421567}
   levelBounds: {fileID: 526742129}
-  waterBody: {fileID: 700603580276741572}
+  waterBody: {fileID: 1060997868}
   waterSurface: {fileID: 700603580276741571}
   waterFillTime: 1
   waterFillYOffset: 4
@@ -3290,6 +3290,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &1060997868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796657129889361058, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 700603580276741570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1073695550
 GameObject:
   m_ObjectHideFlags: 0
@@ -7102,10 +7108,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelBounds
       objectReference: {fileID: 0}
+    - target: {fileID: 700603581958296178, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 700603581958296179, guid: 544e4b6b83ee97540b24b126ac93bd0d,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.4969997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796657129889361058, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796657129889361060, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: adf9c26a612f7e0459e2c223644fdde7, type: 2}
+    - target: {fileID: 3871192150074931900, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5028059080906779966, guid: 544e4b6b83ee97540b24b126ac93bd0d,
         type: 3}
@@ -7132,7 +7158,13 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8000001
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7217591359111266328, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7217591359111266328, guid: 544e4b6b83ee97540b24b126ac93bd0d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 544e4b6b83ee97540b24b126ac93bd0d, type: 3}
 --- !u!1 &700603580276741571 stripped
 GameObject:
