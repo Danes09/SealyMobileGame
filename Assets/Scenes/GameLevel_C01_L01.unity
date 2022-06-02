@@ -808,7 +808,7 @@ MonoBehaviour:
   playerball: {fileID: 368421567}
   levelBounds: {fileID: 526742129}
   waterBody: {fileID: 700603580276741572}
-  waterSurface: {fileID: 700603580276741571}
+  waterSurface: {fileID: 2085492019}
   waterFillTime: 1
   waterFillYOffset: 4
   playerSwimOffset: 3
@@ -7282,6 +7282,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056232888}
   m_CullTransparentMesh: 0
+--- !u!1 &2085492019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796657129889361058, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 700603580276741570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2110797687
 GameObject:
   m_ObjectHideFlags: 0
@@ -7367,6 +7373,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 467465512736669051, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 700603580459411376, guid: 544e4b6b83ee97540b24b126ac93bd0d,
         type: 3}
       propertyPath: m_RootOrder
@@ -7432,6 +7443,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.4969997
       objectReference: {fileID: 0}
+    - target: {fileID: 3871192150074931900, guid: 544e4b6b83ee97540b24b126ac93bd0d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5028059080906779966, guid: 544e4b6b83ee97540b24b126ac93bd0d,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -7444,12 +7460,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 544e4b6b83ee97540b24b126ac93bd0d, type: 3}
---- !u!1 &700603580276741571 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 700603581958296178, guid: 544e4b6b83ee97540b24b126ac93bd0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 700603580276741570}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &700603580276741572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7468126166129350475, guid: 544e4b6b83ee97540b24b126ac93bd0d,
