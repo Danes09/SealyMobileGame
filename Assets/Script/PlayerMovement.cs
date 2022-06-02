@@ -194,17 +194,18 @@ public class PlayerMovement : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (CheckWater == true)
+		if (CheckWater == true && collision.CompareTag("WaterSurface"))
 		{
 			isJumping = true;
 			StartCoroutine(OutWater());
 		}
 
-		if (CheckWater == false)
+		if (CheckWater == false && collision.CompareTag("WaterSurface"))
 		{
 			StartCoroutine(InWater());
 
 		}
+		
 
 	}
 
@@ -266,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
 		rd2d.gravityScale = 0.5f;
 		isJumping = false;
 		tapZone.SetActive(false);
-		Debug.Log("Jump");
+		
 	}
 
 	public void drive()
@@ -277,7 +278,7 @@ public class PlayerMovement : MonoBehaviour
 		StopPlayer();
 		tapZone.SetActive(true);
 		StartCoroutine(JColdown());
-		Debug.Log("Drive");
+		
 	}
 }
 

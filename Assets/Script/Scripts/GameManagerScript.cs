@@ -24,6 +24,8 @@ public class GameManagerScript : MonoBehaviour
     public float waterFillYOffset = 2f;
     public float waterFillTime = 0.5f;
     [SerializeField] public bool isFill = false;
+    public GameObject JumpCooldown;
+    public GameObject Walldectect;
 
     private CameraControlScript camControlScript;
     private bool gamePaused = false;
@@ -93,8 +95,9 @@ public class GameManagerScript : MonoBehaviour
 
         zone.waterBody.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
         zone.waterSurface.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+        JumpCooldown.SetActive(false);
+        Walldectect.SetActive(true);
 
-        
     }
 
 
@@ -283,7 +286,7 @@ if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
 
     IEnumerator FillWaterInEnd()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4);
 
         isFill = false;
     }

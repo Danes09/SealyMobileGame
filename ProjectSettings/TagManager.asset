@@ -16,6 +16,7 @@ TagManager:
   - Balloon
   - Tutorial
   - Barrier
+  - WaterSurface
   layers:
   - Default
   - TransparentFX
@@ -35,7 +36,7 @@ TagManager:
   - EnemyDamage
   - EnemyDamageable
   - CheckWater
-  - 
+  - EnterNextLevel
   - 
   - 
   - 
