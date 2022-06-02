@@ -4725,7 +4725,7 @@ GameObject:
   - component: {fileID: 1518419622}
   m_Layer: 17
   m_Name: ExitWater
-  m_TagString: Untagged
+  m_TagString: WaterSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7078,7 +7078,7 @@ GameObject:
   - component: {fileID: 1977274141}
   m_Layer: 17
   m_Name: EnterWater
-  m_TagString: Untagged
+  m_TagString: WaterSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7479,7 +7479,14 @@ MonoBehaviour:
   SplashFXPowerScale: 0.12
   SplashFXPowerThreshold: 0.1
   SplashFXOffset: -0.1
-  SplashFXSounds: []
+  SplashFXSounds:
+  - {fileID: 8300000, guid: e062560292541884498aef7ce3f61bd5, type: 3}
+  - {fileID: 8300000, guid: f247ead281ab1d8469830ab3541c201f, type: 3}
+  - {fileID: 8300000, guid: 0591439b83d186047ab2f25c3f1eee97, type: 3}
+  - {fileID: 8300000, guid: 6aa3fcd00f382d74291dc979e8178105, type: 3}
+  - {fileID: 8300000, guid: 34289aa0dcff8424db0a2f1ae048b717, type: 3}
+  - {fileID: 8300000, guid: 8a58a867a9da2cd4d886d3730482223f, type: 3}
+  - {fileID: 8300000, guid: 5594ac75f3f90ce43babd9637fcd94a9, type: 3}
   SplashFXPowerToVolume: 0.35
   SplashFXPowerToPitch: 2
   FloatingSpeed: 0.25
