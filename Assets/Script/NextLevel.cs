@@ -9,7 +9,7 @@ public class NextLevel : MonoBehaviour
     {
         if (oth.CompareTag("Player"))
         {
-           // Debug.Log("touch");
+            // Debug.Log("touch");
             SceneManager.LoadScene(4);
 
         }
