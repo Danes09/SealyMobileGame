@@ -133,7 +133,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void StunnedEnergyLost()
     {
-        EditPlayerEnergy(false, energyConsumedWhenStunned);
+        if (!isInvulnerable)
+        {
+            EditPlayerEnergy(false, energyConsumedWhenStunned);
+        }
     }
 
     public void GainPointsFromCrates()

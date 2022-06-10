@@ -60,12 +60,12 @@ public class FallingCrate : SpawnableItem
 	{
 		PlayerMovement player = collision.gameObject.GetComponentInParent<PlayerMovement>();
 
-		if (player)
+		if (player && !PlayerManagerScript.Instance.isInvulnerable) //
 		{
 			PlayerManagerScript.Instance.TakeDamageFromCrates();
 			player.ApplyStun(stunTime);
 
-			Destroy(this.gameObject);
+			Destroy(gameObject);
 			return;
 		}
 	}

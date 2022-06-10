@@ -70,22 +70,26 @@ public class PlayerMovement : MonoBehaviour
 	//! Calling this method while the player is stunned would not refresh the elapsed duration
 	public void ApplyStun(float _duration)
 	{
-        PlayerManagerScript.Instance.TogglePlayerMoving(false);
-        PlayerManagerScript.Instance.StunnedEnergyLost();
+        //if (!PlayerManagerScript.Instance.isInvulnerable) //adding the invulnerability part to prevent stuns
+        
+			PlayerManagerScript.Instance.TogglePlayerMoving(false);
+			PlayerManagerScript.Instance.StunnedEnergyLost();
 
-        if (totalStunDuration < _duration)
-		{
-			totalStunDuration = _duration;
-		}
+			if (totalStunDuration < _duration)
+			{
+				totalStunDuration = _duration;
+			}
 
-		if (stunCoroutine == null)
-		{
-			stunCoroutine = StartCoroutine(ProcessStun());
-		}
+			if (stunCoroutine == null)
+			{
+				stunCoroutine = StartCoroutine(ProcessStun());
+			}
 
-		OnStunned?.Invoke();
+			OnStunned?.Invoke();
+
+			StopPlayer();
 		
-		StopPlayer();
+        
 
 	}
 
@@ -177,19 +181,23 @@ public class PlayerMovement : MonoBehaviour
 	}
 	private IEnumerator ProcessStun()
 	{
-		do
-		{
-			stunned = stunTimeElapsed < totalStunDuration;
-			yield return null;
-			stunTimeElapsed += Time.deltaTime;
-		} while (stunned);
+		//if (!PlayerManagerScript.Instance.isInvulnerable) //if you're not invulnerable process the stun
+		
 
-		stunTimeElapsed = 0;
-		totalStunDuration = 0;
+			do
+			{
+				stunned = stunTimeElapsed < totalStunDuration;
+				yield return null;
+				stunTimeElapsed += Time.deltaTime;
+			} while (stunned);
 
-		stunCoroutine = null;
+			stunTimeElapsed = 0;
+			totalStunDuration = 0;
 
-		OnStunRecover?.Invoke();
+			stunCoroutine = null;
+
+			OnStunRecover?.Invoke();
+		
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
