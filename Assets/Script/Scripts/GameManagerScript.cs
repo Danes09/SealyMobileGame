@@ -84,20 +84,52 @@ public class GameManagerScript : MonoBehaviour
         {
             Pipe.SetActive(true);
             StartCoroutine(FillWaterTime());
-            StartCoroutine(FillWaterInEnd());
+            //StartCoroutine(FillWaterInEnd());
+        } 
 
-        }
     }
+
+    /*void move()
+    {
+        if (transform.position.y >= 21)
+        {
+            moveDirection = Vector3.down;
+        }
+        else if (transform.position.y <= -0.01)
+        {
+            moveDirection = Vector3.up;
+        }
+        // implicit else... if it's in between, it should keep moving in the same direction it last was...
+
+        transform.Translate(moveDirection * Time.deltaTime * speed1);
+    }*/
+
+    void FillWater()
+    {
+        if (zone.waterSurface.transform.position.y <= 17)
+        {
+            zone.waterBody.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+            zone.waterSurface.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
+        }
+        else if (zone.waterSurface.transform.position.y >= 17)
+        {
+            isFill = false;
+        }
+        JumpCooldown.SetActive(false);
+        Walldectect.SetActive(true);
+    }
+
+    /*IEnumerator FillWaterInEnd()
+    {
+        yield return new WaitForSeconds(4);
+
+        isFill = false;
+    }*/
 
     IEnumerator FillWaterTime()
     {
         yield return new WaitForSeconds(2);
-
-        zone.waterBody.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
-        zone.waterSurface.transform.Translate(Vector3.up * (waterFillYOffset / waterFillTime) * Time.deltaTime);
-        JumpCooldown.SetActive(false);
-        Walldectect.SetActive(true);
-
+        FillWater();
     }
 
 
@@ -284,12 +316,7 @@ if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
         }
     }
 
-    IEnumerator FillWaterInEnd()
-    {
-        yield return new WaitForSeconds(4);
 
-        isFill = false;
-    }
 
     public void AddGameEndPoints(int value)
     {
