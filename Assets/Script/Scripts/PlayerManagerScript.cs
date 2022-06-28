@@ -36,6 +36,8 @@ public class PlayerManagerScript : MonoBehaviour
     private float invulnerabilityTime = 5f;
 
 
+    private float slowMotionTime = 5f;
+
 
     void Start()
     {
@@ -54,15 +56,43 @@ public class PlayerManagerScript : MonoBehaviour
 
         /*Temporarily set to key bind I. Can be purchased at the shop? 
          Maybe activated by key I after purchasing at the shop*/
+        powerupByKeyboard();
+        
+    }
+    
+    /*FOR TESTING PURPOSES: Activate powerups by keyboard*/
+    void powerupByKeyboard()
+    {
         if (Input.GetKeyDown(KeyCode.I))
         {
             enableInvulnerability();
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            enableSlowMotion();
+        }
+
+
+    }
+
+
+    void enableSlowMotion()
+    {
+        Time.timeScale = 0.5f;
+        print("slow motion is ON");
+        StartCoroutine(turnOffSlowMotion());
         
     }
     
-    
-    
+
+    IEnumerator turnOffSlowMotion()
+    {
+        yield return new WaitForSeconds(slowMotionTime);
+        Time.timeScale = 1f;
+        print("slow motion is OFF");
+
+    }
 
      void enableInvulnerability()
     {
