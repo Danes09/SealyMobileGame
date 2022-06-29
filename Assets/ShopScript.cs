@@ -9,10 +9,13 @@ public class ShopScript : MonoBehaviour
 
     public int maxHealth;
 
-    int currentHealth;
+    [SerializeField]private int currentHealth;
 
     void Start()
     {
+        //temp//
+        PlayerPrefs.SetInt("health", 0);
+
         SetDefs();
     }
 
@@ -27,12 +30,14 @@ public class ShopScript : MonoBehaviour
 
     void SetDefs()
     {
-        currentHealth = PlayerPrefs.GetInt("health",0);
+        currentHealth = PlayerPrefs.GetInt("health", 0);
+        currentHealth = 0;
 
         healthSlider.maxValue = maxHealth;
-
         healthSlider.value = currentHealth;
+
         Debug.Log(PlayerPrefs.GetInt("health", 0));
+
 
     }
 
