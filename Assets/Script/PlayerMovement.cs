@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
 	private void PlayerMove()
 	{
 		this.transform.Translate(currentDirection * movementSpeed * Time.deltaTime, Space.World);
+
 	}
 
 

@@ -9,6 +9,18 @@ public class PlayerAnimation : MonoBehaviour
 	private float currentAngle;
 	private EOrientation currentOrientation;
 
+	[SerializeField] private GameObject sealFront;
+	[SerializeField] private GameObject sealSideEast;
+	[SerializeField] private GameObject sealSideWest;
+	[SerializeField] private GameObject sealBack;
+
+	public void Awake()
+	{
+		sealSideEast.SetActive(false);
+		sealSideWest.SetActive(false);
+		sealBack.SetActive(false);
+	}
+
 	public void UpdateOrientation()
 	{
 		currentAngle = Vector2.SignedAngle(Vector2.up, referenceTransform.up);
@@ -57,20 +69,64 @@ public class PlayerAnimation : MonoBehaviour
 		switch (currentOrientation)
 		{
 			case EOrientation.North:
-				animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimNorth);
+				if (sealFront != null)
+				{
+					sealFront.gameObject.SetActive(true);
+					sealBack.gameObject.SetActive(false);
+					sealSideWest.gameObject.SetActive(false);
+					sealSideEast.gameObject.SetActive(false);
+
+					// change animation handler 
+					animatorHandler = sealFront.gameObject.GetComponent<SealieAnimatorHandler>();
+					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimNorth);
+				}
 				break;
 			case EOrientation.South:
-				animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimSouth);
+				if (sealBack != null)
+				{
+					sealFront.gameObject.SetActive(false);
+					sealBack.gameObject.SetActive(true);
+					sealSideEast.gameObject.SetActive(false);
+					sealSideWest.gameObject.SetActive(false);
+
+					// change animation handler
+					animatorHandler = sealBack.gameObject.GetComponent<SealieAnimatorHandler>();
+					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimSouth);
+
+				}
 				break;
 			case EOrientation.East:
 			case EOrientation.SouthEast:
 			case EOrientation.NorthEast:
-				animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimEast);
+				if (sealSideEast != null)
+				{
+					sealFront.gameObject.SetActive(false);
+					sealBack.gameObject.SetActive(false);
+					sealSideEast.gameObject.SetActive(true);
+					sealSideWest.gameObject.SetActive(false);
+					//
+
+					// change animation handler
+					animatorHandler = sealSideEast.gameObject.GetComponent<SealieAnimatorHandler>();
+					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimEast);
+
+				}
 				break;
 			case EOrientation.West:
 			case EOrientation.SouthWest:
 			case EOrientation.NorthWest:
-				animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimWest);
+				if (sealSideWest != null)
+				{
+					sealFront.gameObject.SetActive(false);
+					sealBack.gameObject.SetActive(false);
+					sealSideWest.gameObject.SetActive(true);
+					sealSideEast.gameObject.SetActive(false);
+
+					// change animation handler
+					animatorHandler = sealSideWest.gameObject.GetComponent<SealieAnimatorHandler>();
+					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimWest);
+
+				}
 				break;
 		}
 	}
