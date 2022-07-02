@@ -245,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D other) //Code to push Sealy up once he hits the barrier
 	{
+		
 		if (other.gameObject.tag == TagManager.BARRIER_TAG)
 		{
 			print("barrier is touched!");
