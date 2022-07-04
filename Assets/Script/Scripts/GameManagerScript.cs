@@ -47,7 +47,7 @@ public class GameManagerScript : MonoBehaviour
     private GameObject[] tutorialCheck;
     int exceptArrayId;
 
-    
+    private int currentSceneIndex;
 
 
     void Start()
@@ -57,6 +57,8 @@ public class GameManagerScript : MonoBehaviour
 
         // Sets the Script accordingly.
         camControlScript = this.GetComponent<CameraControlScript>();
+
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     /* int exceptionObj = 2; //Position of object in the array
@@ -76,6 +78,7 @@ public class GameManagerScript : MonoBehaviour
         // Checks if the player has met the game end requirements.
         CheckGameEnd();
 
+        increaseGameSpeedForInfiniteLevel();
     }
 
     private void FixedUpdate()
@@ -86,6 +89,19 @@ public class GameManagerScript : MonoBehaviour
             StartCoroutine(FillWaterTime());
             //StartCoroutine(FillWaterInEnd());
         } 
+
+    }
+
+    public void increaseGameSpeedForInfiniteLevel()
+    {
+        if (currentSceneIndex % 6 == 0) //if the scene index is a multiple of 6
+        {
+            // for every 10 seconds, increase game speed by 0.10
+            {
+                Time.timeScale += 0.10f;
+            }
+
+        }
 
     }
 
