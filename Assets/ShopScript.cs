@@ -10,6 +10,11 @@ public class ShopScript : MonoBehaviour
     public int maxHealth;
 
     [SerializeField]private int currentHealth;
+    int cash;
+    public Text cashText;
+
+    public GameObject shopUI;
+
 
     void Start()
     {
@@ -19,17 +24,29 @@ public class ShopScript : MonoBehaviour
         SetDefs();
     }
 
-    private void Update()
+   /* private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
             PlayerPrefs.SetInt("health", 0);
             Debug.Log(PlayerPrefs.GetInt("health", 0));
         }
+    }*/
+
+    public void OpenShop()
+    {
+        shopUI.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        shopUI.SetActive(false);
     }
 
     void SetDefs()
     {
+        cash = 1000;
+        cashText.text = cash + "$";
         currentHealth = PlayerPrefs.GetInt("health", 0);
         currentHealth = 0;
 
@@ -41,14 +58,23 @@ public class ShopScript : MonoBehaviour
 
     }
 
-    public void buyHealth()
+    public void buyHealth(int price)
     {
         if(currentHealth < maxHealth)
         {
-            currentHealth += 5;
-            PlayerPrefs.SetInt("health", currentHealth);
-            healthSlider.value = currentHealth;
-            Debug.Log("Health Upgrade");
+            if(cash >= price)
+            {
+                cash -= price;
+                cashText.text = cash + "$";
+                currentHealth += 5;
+                PlayerPrefs.SetInt("health", currentHealth);
+                healthSlider.value = currentHealth;
+                Debug.Log("Health Upgrade");
+            }
+            else
+            {
+                Debug.Log("out of cash");
+            }
         }
         else
         {
