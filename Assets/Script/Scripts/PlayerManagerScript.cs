@@ -76,7 +76,7 @@ public class PlayerManagerScript : MonoBehaviour
 
     }
 
-
+    /*create a separate function for fast motion*/
     void enableSlowMotion()
     {
         Time.timeScale = 0.5f;
