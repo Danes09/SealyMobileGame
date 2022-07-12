@@ -47,11 +47,15 @@ public class GameManagerScript : MonoBehaviour
     private GameObject[] tutorialCheck;
     int exceptArrayId;
 
+    private float timeElapsed;
+
+
     private int currentSceneIndex;
 
 
     void Start()
     {
+        
         // Simple Singleton.
         Instance = this;
 
@@ -75,6 +79,10 @@ public class GameManagerScript : MonoBehaviour
     {
         checkIfTutorialNeeded();
 
+        updateTimeElapsed();
+
+        
+
         // Checks if the player has met the game end requirements.
         CheckGameEnd();
 
@@ -92,8 +100,31 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
+    void updateTimeElapsed()
+    {
+        timeElapsed += Time.deltaTime; //done to findout how much time has passed. This shall be used to for increasing game speed accordingly.. in the infinite levels
+
+        print("time elapsed:" + timeElapsed);
+
+    }
+
     public void increaseGameSpeedForInfiniteLevel()
     {
+        //timeElapsed=
+
+
+/* guide for multiplier of speed? 
+            if (timer > 1)
+        {
+
+            score += (1 * scoreMultiplier);
+            //score += 1;
+            scoreText.text = "" + score;
+            timer = 0;
+
+        }
+*/
+
         if (currentSceneIndex % 6 == 0) //if the scene index is a multiple of 6
         {
             // for every 10 seconds, increase game speed by 0.10
