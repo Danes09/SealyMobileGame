@@ -48,7 +48,7 @@ public class BarrierScript : MonoBehaviour
 
 
         }
-        */
-
+        
+*/
 
 

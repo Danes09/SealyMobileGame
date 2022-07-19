@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool isDrive = false;
 	private Rigidbody2D rd2d;
 
-	float pushUpForceFromBarrier=1.0f;
+	float pushUpForceFromBarrier=2.0f;
 
 	//Use to Stop Sealy Swim in air
 	public GameObject tapZone;
