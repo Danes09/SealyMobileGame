@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject enterwaterBodytrigger;
 	public GameObject WallColision;
 	public GameObject JumpColdown;
+
 	[SerializeField] private bool CheckWater = true;
 	private bool isDrive = false;
 	private Rigidbody2D rd2d;

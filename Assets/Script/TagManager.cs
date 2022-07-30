@@ -9,6 +9,9 @@ public class TagManager : MonoBehaviour
 
 
     public static string WATER_TAG = "Water";
+    public static string WATER_SURFACE = "WaterSurface"; //when sealy collides with this, he has officially exited the water and is in the air
+
+
     public static string DESTRUCTIBLE_TAG="Destructible";
     public static string WALL_TAG = "Wall";
     public static string BALL_TAG = "Ball";
