@@ -61,6 +61,7 @@ public class PlayerManagerScript : MonoBehaviour
     }
     
     /*FOR TESTING PURPOSES: Activate powerups by keyboard*/
+    /*CAN ACTUALLY BE REMOVED NOW THAT BUTTONS ARE BEING ADDED*/
     void powerupByKeyboard()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -77,7 +78,7 @@ public class PlayerManagerScript : MonoBehaviour
     }
 
     /*create a separate function for fast motion*/
-    void enableSlowMotion()
+    public void enableSlowMotion()
     {
         Time.timeScale = 0.5f;
         print("slow motion is ON");
@@ -94,7 +95,7 @@ public class PlayerManagerScript : MonoBehaviour
 
     }
 
-     void enableInvulnerability()
+    public void enableInvulnerability()
     {
         isInvulnerable = true;
         print("Invulnerability: " + isInvulnerable);
