@@ -6,6 +6,7 @@ public class PlayerAnimation : MonoBehaviour
 {
 	[SerializeField] private Transform referenceTransform;
 	[SerializeField] private SealieAnimatorHandler animatorHandler;
+	[SerializeField] private Animator targetAnimator;
 	private float currentAngle;
 	private EOrientation currentOrientation;
 
@@ -20,6 +21,15 @@ public class PlayerAnimation : MonoBehaviour
 		sealSideWest.SetActive(false);
 		sealBack.SetActive(false);
 	}
+
+	public void update()
+    {
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+			Debug.Log("sealy has been hit");
+			targetAnimator.SetTrigger("sealyIsHit");
+		}
+    }
 
 	public void UpdateOrientation()
 	{
@@ -66,11 +76,14 @@ public class PlayerAnimation : MonoBehaviour
 
 	private void ToggleDirectionSprite()
 	{
+		//this function is used to activate the correct direction for sealey 
 		switch (currentOrientation)
 		{
 			case EOrientation.North:
 				if (sealFront != null)
 				{
+					targetAnimator = sealFront.GetComponent<Animator>();
+
 					sealFront.gameObject.SetActive(true);
 					sealBack.gameObject.SetActive(false);
 					sealSideWest.gameObject.SetActive(false);
@@ -84,6 +97,8 @@ public class PlayerAnimation : MonoBehaviour
 			case EOrientation.South:
 				if (sealBack != null)
 				{
+					targetAnimator = sealBack.GetComponent<Animator>();
+
 					sealFront.gameObject.SetActive(false);
 					sealBack.gameObject.SetActive(true);
 					sealSideEast.gameObject.SetActive(false);
@@ -95,28 +110,27 @@ public class PlayerAnimation : MonoBehaviour
 
 				}
 				break;
-			case EOrientation.East:
-			case EOrientation.SouthEast:
 			case EOrientation.NorthEast:
 				if (sealSideEast != null)
 				{
+					targetAnimator= sealSideEast.GetComponent<Animator>();
+
 					sealFront.gameObject.SetActive(false);
 					sealBack.gameObject.SetActive(false);
 					sealSideEast.gameObject.SetActive(true);
 					sealSideWest.gameObject.SetActive(false);
-					//
-
+					
 					// change animation handler
 					animatorHandler = sealSideEast.gameObject.GetComponent<SealieAnimatorHandler>();
 					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimEast);
 
 				}
 				break;
-			case EOrientation.West:
-			case EOrientation.SouthWest:
 			case EOrientation.NorthWest:
 				if (sealSideWest != null)
 				{
+					targetAnimator = sealSideWest.GetComponent<Animator>();
+
 					sealFront.gameObject.SetActive(false);
 					sealBack.gameObject.SetActive(false);
 					sealSideWest.gameObject.SetActive(true);
@@ -138,14 +152,18 @@ public class PlayerAnimation : MonoBehaviour
 			case EOrientation.East:
 			case EOrientation.SouthEast:
 			case EOrientation.NorthEast:
-				return SealieAnimatorHandler.ESealieAnimationName.StunnedEast;
+				targetAnimator.SetTrigger("sealyIsHit");
+			    return SealieAnimatorHandler.ESealieAnimationName.StunnedEast;
 			case EOrientation.West:
 			case EOrientation.SouthWest:
 			case EOrientation.NorthWest:
+				targetAnimator.SetTrigger("sealyIsHit");
 				return SealieAnimatorHandler.ESealieAnimationName.StunnedWest;
 			case EOrientation.North:
+				targetAnimator.SetTrigger("sealyIsHit");
 				return SealieAnimatorHandler.ESealieAnimationName.StunnedNorth;
 			case EOrientation.South:
+				targetAnimator.SetTrigger("sealyIsHit");
 				return SealieAnimatorHandler.ESealieAnimationName.StunnedSouth;
 			default:
 				return SealieAnimatorHandler.ESealieAnimationName.StunnedNorth;
@@ -163,4 +181,9 @@ public class PlayerAnimation : MonoBehaviour
 		West		= 2,
 		NorthWest	= 1
 	}
+
+	private void container()
+    {
+
+    }
 }

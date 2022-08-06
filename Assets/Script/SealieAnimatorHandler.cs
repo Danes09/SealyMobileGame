@@ -7,7 +7,7 @@ public class SealieAnimatorHandler : MonoBehaviour
 
 	public void PlayAnimation(ESealieAnimationName _sealieAnimationName)
 	{
-		targetAnimator.Play(GetAnimationStringName(_sealieAnimationName));
+		//targetAnimator.Play(GetAnimationStringName(_sealieAnimationName));
 	}
 
 	public void SetInt(ESealieAnimParameter _animParameter, int value)
@@ -28,8 +28,11 @@ public class SealieAnimatorHandler : MonoBehaviour
 			case ESealieAnimationName.SwimSouth:
 				return "SwimSouth";
 			case ESealieAnimationName.SwimNorth:
+				Debug.Log("test 1a");
 				return "SwimNorth";
 			case ESealieAnimationName.StunnedNorth:
+				print("test");
+				targetAnimator.SetTrigger("sealyIsHit");
 				return "StunnedNorth";
 			case ESealieAnimationName.StunnedEast:
 				return "StunnedEast";
@@ -37,6 +40,7 @@ public class SealieAnimatorHandler : MonoBehaviour
 				return "StunnedWest";
 			case ESealieAnimationName.StunnedSouth:
 				return "StunnedSouth";
+			//new animation cases
 			default:
 				return "ERROR";
 		}
