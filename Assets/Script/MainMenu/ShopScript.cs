@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopScript : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ShopScript : MonoBehaviour
 
     [SerializeField]private int currentHealth;
     int cash;
-    public Text cashText;
+    public TextMeshProUGUI cashText;
 
     public GameObject shopUI;
 

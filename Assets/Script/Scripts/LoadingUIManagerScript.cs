@@ -22,7 +22,7 @@ public class LoadingUIManagerScript : MonoBehaviour
     IEnumerator EnterGameFadeIn()
     {
         fadePanel.CrossFadeAlpha(0.0f, fadingDuration, false);
-        yield return new WaitForSeconds(fadingDuration + 2.0f);
+        yield return new WaitForSeconds(fadingDuration + 1.0f);
         fadePanel.GetComponent<Image>().CrossFadeAlpha(1.0f, fadingDuration, false);
         yield return new WaitForSeconds(fadingDuration + 1.0f);
 
