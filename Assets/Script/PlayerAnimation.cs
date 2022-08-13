@@ -94,6 +94,22 @@ public class PlayerAnimation : MonoBehaviour
 					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimNorth);
 				}
 				break;
+			case EOrientation.East:
+				if (sealSideEast != null)
+				{
+					targetAnimator = sealSideEast.GetComponent<Animator>();
+
+					sealFront.gameObject.SetActive(false);
+					sealBack.gameObject.SetActive(false);
+					sealSideEast.gameObject.SetActive(true);
+					sealSideWest.gameObject.SetActive(false);
+
+					// change animation handler
+					animatorHandler = sealSideEast.gameObject.GetComponent<SealieAnimatorHandler>();
+					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimEast);
+
+				}
+				break;
 			case EOrientation.South:
 				if (sealBack != null)
 				{
@@ -110,23 +126,7 @@ public class PlayerAnimation : MonoBehaviour
 
 				}
 				break;
-			case EOrientation.NorthEast:
-				if (sealSideEast != null)
-				{
-					targetAnimator= sealSideEast.GetComponent<Animator>();
-
-					sealFront.gameObject.SetActive(false);
-					sealBack.gameObject.SetActive(false);
-					sealSideEast.gameObject.SetActive(true);
-					sealSideWest.gameObject.SetActive(false);
-					
-					// change animation handler
-					animatorHandler = sealSideEast.gameObject.GetComponent<SealieAnimatorHandler>();
-					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimEast);
-
-				}
-				break;
-			case EOrientation.NorthWest:
+			case EOrientation.West:
 				if (sealSideWest != null)
 				{
 					targetAnimator = sealSideWest.GetComponent<Animator>();
@@ -141,6 +141,16 @@ public class PlayerAnimation : MonoBehaviour
 					animatorHandler.PlayAnimation(SealieAnimatorHandler.ESealieAnimationName.SwimWest);
 
 				}
+				break;
+			case EOrientation.NorthEast:
+				break;
+			case EOrientation.SouthEast:
+				Debug.Log("south east");
+				break;
+			case EOrientation.SouthWest:
+				Debug.Log("south west");
+				break;
+			case EOrientation.NorthWest:
 				break;
 		}
 	}

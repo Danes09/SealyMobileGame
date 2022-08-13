@@ -50,13 +50,13 @@ public class EnemyMovementScript : MonoBehaviour
             }
 
             // Return the value after it's confirmed the array is different.
-            Debug.Log("NextArray: " + tempArray + " - PrevArray: " + nextTargetArray);
+            //Debug.Log("NextArray: " + tempArray + " - PrevArray: " + nextTargetArray);
             return tempArray;
         }
         else
         {
             // Immediately return because the array is different.
-            Debug.Log("NextArray: " + tempArray + " - PrevArray: " + nextTargetArray);
+            //Debug.Log("NextArray: " + tempArray + " - PrevArray: " + nextTargetArray);
             return tempArray;
         }
     }
