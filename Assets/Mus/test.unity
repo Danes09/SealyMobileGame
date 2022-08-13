@@ -8366,7 +8366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7863281ef9680df4c926cb3048facbb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   lastclickpos: {x: 0, y: 0}
 --- !u!1 &2056232888
 GameObject:

@@ -5,7 +5,9 @@ using UnityEngine;
 public class BalloonScript : MonoBehaviour
 {
     private BalloonCageScript thisCageManager;
-    
+    public Animator Redballoon;
+
+
     public void SetThisCageManager(BalloonCageScript cageManager)
     {
         // Set the manager for this balloon.
@@ -17,7 +19,13 @@ public class BalloonScript : MonoBehaviour
         if (collision.gameObject.tag == "Ball")
         {
             thisCageManager.BalloonDestroyed();
-            this.gameObject.SetActive(false);
+            Redballoon.SetTrigger("BallonExplode");
+            StartCoroutine(BalloonExplode());
         }
+    }
+    IEnumerator BalloonExplode()
+    {
+        yield return new WaitForSeconds(0.2f);
+        this.gameObject.SetActive(false);
     }
 }

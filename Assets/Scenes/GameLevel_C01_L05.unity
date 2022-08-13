@@ -2154,11 +2154,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9ca26d6dcd45c4d873ef883871a898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pipe: {fileID: 0}
+  zone: {fileID: 0}
+  waterFillYOffset: 2
+  waterFillTime: 0.5
+  isFill: 0
+  JumpCooldown: {fileID: 0}
+  Walldectect: {fileID: 0}
   gameLevelName: GameLevel_C01_L05
   playerGameEndPoints: 0
   gameEndCondition: 13
   buttonPoints: 5
   tufRevived: 0
+  tutorialBubbles: []
 --- !u!4 &1074259118
 Transform:
   m_ObjectHideFlags: 0
@@ -4586,6 +4594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PolarBear
+      objectReference: {fileID: 0}
+    - target: {fileID: 227423130138980112, guid: 935328ce9ad807e4abd20d59ac41fd07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 227423130138980143, guid: 935328ce9ad807e4abd20d59ac41fd07,
         type: 3}

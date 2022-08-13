@@ -125,7 +125,7 @@ public class GameManagerScript : MonoBehaviour
         }
 */
 
-        if (currentSceneIndex % 6 == 0) //if the scene index is a multiple of 6
+        if (currentSceneIndex % 8 == 0) //if the scene index is a multiple of 8
         {
             // for every 10 seconds, increase game speed by 0.10
             {
