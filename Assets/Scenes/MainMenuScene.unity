@@ -5965,8 +5965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.1, y: 635}
-  m_SizeDelta: {x: 824.45667, y: 230.0574}
+  m_AnchoredPosition: {x: -8, y: 625}
+  m_SizeDelta: {x: 901.83093, y: 230.0574}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2026589520
 MonoBehaviour:
@@ -5987,7 +5987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Seal Bounce
+  m_text: Sealy Bounce
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c33bca01684071c498f2572b9d40567d, type: 2}
   m_sharedMaterial: {fileID: -2998953453303622965, guid: c33bca01684071c498f2572b9d40567d,
