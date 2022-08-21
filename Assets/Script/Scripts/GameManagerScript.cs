@@ -125,7 +125,7 @@ public class GameManagerScript : MonoBehaviour
         }
 */
 
-        if (currentSceneIndex % 8 == 0) //if the scene index is a multiple of 8
+        if (currentSceneIndex % 9 == 0) //if the scene index is a multiple of 9
         {
             // for every 10 seconds, increase game speed by 0.10
             {
@@ -407,5 +407,10 @@ if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(gameLevelName);
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
