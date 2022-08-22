@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyManagerScript : MonoBehaviour
 {
@@ -19,6 +20,19 @@ public class EnemyManagerScript : MonoBehaviour
     private Vector2 respawnedPos;
     private float oriEnemyHealth;
     private float oriEnemyArmorHP;
+
+
+    public Image armorBar;
+
+    //private float enemy
+
+
+    private void Update()
+    {
+        armorBar.fillAmount = enemyArmorHP / oriEnemyArmorHP ;
+        //healthBar.fillAmount = currentHealth / maxHealth;
+    }
+
 
     void Start()
     {
