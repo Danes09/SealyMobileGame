@@ -29,7 +29,7 @@ public class EnemyManagerScript : MonoBehaviour
 
     private void Update()
     {
-        armorBar.fillAmount = enemyArmorHP / oriEnemyArmorHP ;
+        //armorBar.fillAmount = enemyArmorHP / oriEnemyArmorHP ;
         //healthBar.fillAmount = currentHealth / maxHealth;
     }
 

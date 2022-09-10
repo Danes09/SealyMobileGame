@@ -238,7 +238,7 @@ public class PlayerMovement : MonoBehaviour
 		CheckWater = true;
 	}
 
-	IEnumerator JColdown()
+	IEnumerator JColdown()//jumpcooldown
 	{
 		yield return new WaitForSeconds(10.0f);
 		WallColision.SetActive(false);
