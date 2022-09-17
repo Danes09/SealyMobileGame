@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BalloonScript : MonoBehaviour
@@ -17,6 +16,12 @@ public class BalloonScript : MonoBehaviour
     public void BalloonIsHit(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ball")
+        {
+            thisCageManager.BalloonDestroyed();
+            Redballoon.SetTrigger("BallonExplode");
+            StartCoroutine(BalloonExplode());
+        }
+        if (collision.gameObject.tag == "Player")//when player hit the balloon, balloon destroy
         {
             thisCageManager.BalloonDestroyed();
             Redballoon.SetTrigger("BallonExplode");
