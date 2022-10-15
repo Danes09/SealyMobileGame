@@ -318,16 +318,6 @@ PrefabInstance:
       propertyPath: TCS
       value: 
       objectReference: {fileID: 506874101}
-    - target: {fileID: 2290363973883783937, guid: af34245120c7e0f48b5c7c7490629f53,
-        type: 3}
-      propertyPath: tes
-      value: 
-      objectReference: {fileID: 506874101}
-    - target: {fileID: 2290363973883783937, guid: af34245120c7e0f48b5c7c7490629f53,
-        type: 3}
-      propertyPath: Scenetuf
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2290363973883783940, guid: af34245120c7e0f48b5c7c7490629f53,
         type: 3}
       propertyPath: m_Name
@@ -408,11 +398,6 @@ PrefabInstance:
       propertyPath: OnBounce.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8714742671303028038}
-    - target: {fileID: 2290363973883783942, guid: af34245120c7e0f48b5c7c7490629f53,
-        type: 3}
-      propertyPath: OnBounce.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SuspendPlayerInput
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af34245120c7e0f48b5c7c7490629f53, type: 3}
 --- !u!1 &136878625 stripped
@@ -2494,6 +2479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelBounds 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757126918826259323, guid: d0173da4cee639d4fa16d23f0b8ad54b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0173da4cee639d4fa16d23f0b8ad54b, type: 3}
