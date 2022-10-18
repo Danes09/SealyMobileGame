@@ -1047,10 +1047,6 @@ MonoBehaviour:
   referenceTransform: {fileID: 2290363973883783941}
   animatorHandler: {fileID: 2617147720234068308}
   targetAnimator: {fileID: 3145435244148369287}
-  sealFront: {fileID: 940893431408680004}
-  sealSideEast: {fileID: 8165059227539912628}
-  sealSideWest: {fileID: 4491004710650999143}
-  sealBack: {fileID: 1763889157233992758}
 --- !u!114 &2290363973883783937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1075,19 @@ MonoBehaviour:
   pointsGainedFromCrates: 10
   playerTotalPoints: 0
   isInvulnerable: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+  Scenetuf: 1
+=======
+<<<<<<< HEAD
+  Scenetuf: 0
+=======
+  Scenetuf: 1
+>>>>>>> 510f1e36bfdb0bb33379e5791a802e154f4afd30
+>>>>>>> Stashed changes
+  TCS: {fileID: 0}
+>>>>>>> parent of 5b04789 (Revert "level 1(with player)")
 --- !u!114 &2290363973883783942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,7 +1193,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &2290363974408414394
 GameObject:
   m_ObjectHideFlags: 0
