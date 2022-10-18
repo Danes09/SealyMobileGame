@@ -261,7 +261,7 @@ public class PlayerManagerScript : MonoBehaviour
             {
                 TCS.DecreaseHunger();
             }
-            else if (TCS.currHungerValue <= 0)
+            else if (Scenetuf == true && TCS.currHungerValue <= 0)
             {
                 Scenetuf = false;
             }

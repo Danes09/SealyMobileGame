@@ -624,7 +624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &506874096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerBarValue: 5
+  currHungerValue: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
