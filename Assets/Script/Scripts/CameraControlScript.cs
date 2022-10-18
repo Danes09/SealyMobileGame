@@ -13,7 +13,8 @@ public class LevelProgression
 
 public class CameraControlScript : MonoBehaviour
 {
-	public ZoneTransitionManager zoneTransitionManager;
+    public static CameraControlScript instance;
+    public ZoneTransitionManager zoneTransitionManager;
     public GameObject playerBall;
     public GameObject playerObject;
     public GameObject levelBoundary;
@@ -44,6 +45,7 @@ public class CameraControlScript : MonoBehaviour
 
         if (levelLayers[currentLevelProgression].endPointsToProgress == gameEndPoints)
         {
+
             // Progress the level upwards because requirements are met.
             ProgressCameraUpwards();
         } 
@@ -51,6 +53,7 @@ public class CameraControlScript : MonoBehaviour
 
     void ProgressCameraUpwards()
     {
+
         // Progress the camera upwards by a set amount (cameraHeight) each time the player...
         // ... completes one part of the level and is ready to progress to the next part of the level.
         currentLevelProgression++;
