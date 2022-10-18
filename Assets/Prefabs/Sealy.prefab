@@ -1020,7 +1020,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2290363973883783940}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.11389208, y: -2.325397, z: 4.8847947}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
@@ -1079,8 +1079,6 @@ MonoBehaviour:
   pointsGainedFromCrates: 10
   playerTotalPoints: 0
   isInvulnerable: 0
-  Scenetuf: 1
-  TCS: {fileID: 0}
 --- !u!114 &2290363973883783942
 MonoBehaviour:
   m_ObjectHideFlags: 0
