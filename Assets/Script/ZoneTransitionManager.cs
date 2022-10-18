@@ -33,9 +33,8 @@ public class ZoneTransitionManager : MonoBehaviour
 	}
 
 	private IEnumerator DoTransitionSequence(System.Action transitionCompleteAction = null)
-    {
-
-        ZoneTransitionStarted?.Invoke();
+	{
+		ZoneTransitionStarted?.Invoke();
 		TapReceiver.gameInputBlocked = true;
 		playerMovement.StopPlayer();
         yield return StartCoroutine(DisableBallRoutine());
