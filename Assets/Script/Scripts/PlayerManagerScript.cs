@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManagerScript : MonoBehaviour
@@ -38,6 +37,10 @@ public class PlayerManagerScript : MonoBehaviour
 
     private float slowMotionTime = 5f;
 
+    [Header("Scene Tuf only")]
+    public bool Scenetuf;
+    public TufCharacterScript TCS;
+
 
     void Start()
     {
@@ -49,7 +52,7 @@ public class PlayerManagerScript : MonoBehaviour
 
         InvokeRepeating("DecreasePlayerEnergy", 0.5f, 0.5f);
     }
-    
+
     void Update()
     {
         CapPlayerData();
@@ -57,9 +60,9 @@ public class PlayerManagerScript : MonoBehaviour
         /*Temporarily set to key bind I. Can be purchased at the shop? 
          Maybe activated by key I after purchasing at the shop*/
         powerupByKeyboard();
-        
+
     }
-    
+
     /*FOR TESTING PURPOSES: Activate powerups by keyboard*/
     /*CAN ACTUALLY BE REMOVED NOW THAT BUTTONS ARE BEING ADDED*/
     void powerupByKeyboard()
@@ -83,9 +86,9 @@ public class PlayerManagerScript : MonoBehaviour
         Time.timeScale = 0.5f;
         print("slow motion is ON");
         StartCoroutine(turnOffSlowMotion());
-        
+
     }
-    
+
 
     IEnumerator turnOffSlowMotion()
     {
@@ -99,7 +102,7 @@ public class PlayerManagerScript : MonoBehaviour
     {
         isInvulnerable = true;
         print("Invulnerability: " + isInvulnerable);
-        
+
         StartCoroutine(turnOffInvulnerability());
     }
 
@@ -146,10 +149,11 @@ public class PlayerManagerScript : MonoBehaviour
 
     public void TakeDamageFromCrates()
     {
-        if (!isInvulnerable) {
+        if (!isInvulnerable)
+        {
             EditPlayerHealth(false, damageTakenFromCrates);
         }
-        
+
     }
 
     public void SwitchDirectionEnergy()
@@ -251,7 +255,18 @@ public class PlayerManagerScript : MonoBehaviour
     public void EditPlayerHunger(bool togglePlusMinus, float value)
     {
         if (togglePlusMinus == true)
+        {
             playerHunger = playerHunger + value;
+            if (Scenetuf == true)
+            {
+                TCS.DecreaseHunger();
+            }
+            else if (Scenetuf == true && TCS.currHungerValue <= 0)
+            {
+                Scenetuf = false;
+            }
+
+        }
         else if (togglePlusMinus == false)
             playerHunger = playerHunger - value;
     }

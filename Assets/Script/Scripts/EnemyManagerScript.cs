@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,9 +25,21 @@ public class EnemyManagerScript : MonoBehaviour
 
     //private float enemy
 
-
+    [Header("Scene Tuf only")]
+    public bool Scenetuf;
+    public CapsuleCollider2D EnemyCollider;
+    public TufCharacterScript TCS;
     private void Update()
     {
+        if (Scenetuf == true)
+        {
+            if (TCS.currHungerValue <= 0)
+            {
+                EnemyCollider.enabled = true;
+                Scenetuf = false;
+            }
+        }
+
         //armorBar.fillAmount = enemyArmorHP / oriEnemyArmorHP ;
         //healthBar.fillAmount = currentHealth / maxHealth;
     }
@@ -119,7 +130,7 @@ public class EnemyManagerScript : MonoBehaviour
     {
         if (invulnerable)
             return;
-        
+
         if (enemyArmorHP > 0)
         {
             // If enemy has armor, damage the armor instead.

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TufCharacterScript : MonoBehaviour
 {
     public float hungerBarValue;
-    private float currHungerValue;
+    public float currHungerValue;
     
     void Start()
     {
@@ -22,7 +22,7 @@ public class TufCharacterScript : MonoBehaviour
         
     }
 
-    void DecreaseHunger()
+   public void DecreaseHunger()
     {
         // Decrease Tuf Hunger when consumed food.
         currHungerValue--;
