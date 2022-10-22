@@ -57,3 +57,9 @@ TagManager:
   - name: Tutorial Panel
     uniqueID: 1150140671
     locked: 0
+  - name: Penguin Soldier
+    uniqueID: 1692117019
+    locked: 0
+  - name: Crossbow Penguin
+    uniqueID: 1686446539
+    locked: 0
