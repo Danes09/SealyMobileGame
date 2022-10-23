@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyManagerScript : MonoBehaviour
 {
@@ -21,7 +20,8 @@ public class EnemyManagerScript : MonoBehaviour
     private float oriEnemyArmorHP;
 
 
-    public Image armorBar;
+    public SpriteRenderer armorBar;
+    public SpriteRenderer healthBar;
 
     //private float enemy
 
@@ -39,11 +39,21 @@ public class EnemyManagerScript : MonoBehaviour
                 Scenetuf = false;
             }
         }
-
-        //armorBar.fillAmount = enemyArmorHP / oriEnemyArmorHP ;
-        //healthBar.fillAmount = currentHealth / maxHealth;
+        SetFill(enemyArmorHP / oriEnemyArmorHP);
+        SetFills(enemyHealth / oriEnemyHealth);
+        // armorBar.SetFill(1) = enemyArmorHP / oriEnemyArmorHP;
+        // healthBar.fillAmount = enemyHealth / oriEnemyHealth;
+    }
+    public void SetFill(float amount)
+    {
+        armorBar.material.SetFloat("_Cutoff", amount);
     }
 
+    public void SetFills(float amount)
+    {
+        healthBar.material.SetFloat("_Cutoff", amount);
+
+    }
 
     void Start()
     {

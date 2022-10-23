@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			PlayerMove();
 		}
-    }
+	}
 
 	private void PlayerMove()
 	{
@@ -243,6 +243,11 @@ public class PlayerMovement : MonoBehaviour
 		WallColision.SetActive(false);//false
 		JumpColdown.SetActive(true);//true
 	}
+	//public void JColdowns()//jumpcooldown
+	//{
+	//	WallColision.SetActive(true);//false
+	//	JumpColdown.SetActive(false);//true
+	//}
 
 	private void OnCollisionEnter2D(Collision2D other) //Code to push Sealy up once he hits the barrier
 	{
@@ -272,23 +277,25 @@ public class PlayerMovement : MonoBehaviour
 	}
 	private void jump()
 	{
+		CheckWater = false;
 		float jumpVelocity = 3f;
 		rd2d.velocity = Vector2.up * jumpVelocity;
 		rd2d.gravityScale = 0.5f;
 		isJumping = false;
-		//tapZone.SetActive(false);
+		tapZone.SetActive(false);
 		//StopPlayer();
 	}
 
 	public void drive()
 	{
+		CheckWater = true;
 		rd2d.gravityScale = 0f;
 		rd2d.velocity = Vector2.zero;
 		isDrive = false;
 		StartCoroutine(JColdown());
 
 
-		//tapZone.SetActive(true);
+		tapZone.SetActive(true);
 	}
 }
 

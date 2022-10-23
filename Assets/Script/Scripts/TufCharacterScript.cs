@@ -6,7 +6,10 @@ public class TufCharacterScript : MonoBehaviour
 {
     public float hungerBarValue;
     public float currHungerValue;
-    
+
+
+    public static TufCharacterScript Instance;
+
     void Start()
     {
         if (hungerBarValue <= 0)
@@ -19,17 +22,20 @@ public class TufCharacterScript : MonoBehaviour
     
     void Update()
     {
-        
+
+        GameUIManagerScript.Instance.tuffoodleftui.text = "Food Left : " + currHungerValue;
     }
 
    public void DecreaseHunger()
     {
         // Decrease Tuf Hunger when consumed food.
         currHungerValue--;
+        
 
         // Check if Hunger has reached 0.
         if (currHungerValue <= 0)
         {
+            GameUIManagerScript.Instance.tuffoodleftui.enabled = false;
             GameManagerScript.Instance.tufRevived = true;
             this.gameObject.SetActive(false);
         }

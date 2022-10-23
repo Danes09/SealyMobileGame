@@ -27,7 +27,7 @@ public class CameraControlScript : MonoBehaviour
     private Vector3 lerpedPlayerPos;
     private Vector3 lerpedBoundaryPos;
     private int currentLevelProgression = 0;
-    
+
     // Values are checked from line to line in the scene itself.
     private float cameraHeight = 10.0f;
     private float cameraWidth = 5.62f;
@@ -48,7 +48,7 @@ public class CameraControlScript : MonoBehaviour
 
             // Progress the level upwards because requirements are met.
             ProgressCameraUpwards();
-        } 
+        }
     }
 
     void ProgressCameraUpwards()
@@ -80,7 +80,7 @@ public class CameraControlScript : MonoBehaviour
             }
             */
 
-			zoneTransitionManager.ExecuteZoneTransition(()=> ActivateNextArea());
+            zoneTransitionManager.ExecuteZoneTransition(() => ActivateNextArea());
             //StartCoroutine(CameraTransitionUpwards());
         }
     }
@@ -104,18 +104,19 @@ public class CameraControlScript : MonoBehaviour
         lerpedCamPos = new Vector3(mainCam.transform.position.x, mainCam.transform.position.y + cameraHeight, mainCam.transform.position.z);
         lerpedPlayerPos = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y + cameraHeight, playerObject.transform.position.z);
         lerpedBoundaryPos = new Vector3(levelBoundary.transform.position.x, levelBoundary.transform.position.y + cameraHeight, levelBoundary.transform.position.z);
-		//! Wait for ball to stop moving
-		playerBall.GetComponent<BouncingBall>().Reset();
-		yield return new WaitUntil(()=>playerBall.GetComponent<Rigidbody2D>().velocity == Vector2.zero);
-		Vector3 lerpedBallPos = new Vector3(playerBall.transform.position.x, playerBall.transform.position.y + cameraHeight, playerBall.transform.position.z);
+        //! Wait for ball to stop moving
+        playerBall.GetComponent<BouncingBall>().Reset();
+        yield return new WaitUntil(() => playerBall.GetComponent<Rigidbody2D>().velocity == Vector2.zero);
+        Vector3 lerpedBallPos = new Vector3(playerBall.transform.position.x, playerBall.transform.position.y + cameraHeight, playerBall.transform.position.z);
 
-		// Disable ball bounce here while the water "rises" upwards.
-		playerBall.GetComponent<BouncingBall>().enabled = false;
-		//! No gravity on ball
-		playerBall.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-
+        // Disable ball bounce here while the water "rises" upwards.
+        playerBall.GetComponent<BouncingBall>().enabled = false;
+        //! No gravity on ball
+        playerBall.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+       // playerObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         // Don't disable the player movement. Stun the player instead then disable the player movement after the player floats down a lil.
         playerObject.GetComponent<PlayerMovement>().ApplyStun(1.0f);
+
         yield return new WaitForSeconds(1.2f);
         playerObject.GetComponent<PlayerMovement>().enabled = false;
 
@@ -124,17 +125,17 @@ public class CameraControlScript : MonoBehaviour
         {
             Debug.Log(lerpedCamPos.y + " - " + mainCam.transform.position.y);
             time += Time.deltaTime * (Time.timeScale / transitionDuration);
-            
+
             playerObject.transform.position = Vector3.Lerp(playerObject.transform.position, lerpedPlayerPos, time);
             levelBoundary.transform.position = Vector3.Lerp(levelBoundary.transform.position, lerpedBoundaryPos, time);
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, lerpedCamPos, time);
-			playerBall.transform.position = Vector3.Lerp(playerBall.transform.position, lerpedBallPos, time);
-            
+            playerBall.transform.position = Vector3.Lerp(playerBall.transform.position, lerpedBallPos, time);
+
             yield return null;
-		}
-		//! Gravity on ball
-		playerBall.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        
+        }
+        //! Gravity on ball
+        playerBall.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
         // Activate the objects in the next area.
         ActivateNextArea();
         yield return 0;

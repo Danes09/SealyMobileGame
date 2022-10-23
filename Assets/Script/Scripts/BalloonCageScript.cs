@@ -12,11 +12,12 @@ public class BalloonCageScript : MonoBehaviour
     
     public List<GameObject> balloonObjects = new List<GameObject>();
     public GameObject trappedCharacter;
+    public GameObject cage;
     public Rigidbody2D thisRigidbody;
     public EnemyMovementScript thisMovementScript;
     public int balloonPointValue;
 
-    private int numOfBalloon = 0;
+    public int numOfBalloon = 0;
 
     void Start()
     {
@@ -56,7 +57,9 @@ public class BalloonCageScript : MonoBehaviour
 
     IEnumerator DropCage()
     {
-        // trappedCharacter.SetActive(false);
+        cage.SetActive(false);
+        trappedCharacter.SetActive(true);
+
         this.GetComponent<SpriteRenderer>().enabled = false;
         thisMovementScript.enabled = false;
         thisRigidbody.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
