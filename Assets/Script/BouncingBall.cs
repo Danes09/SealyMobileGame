@@ -1,24 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BouncingBall : MonoBehaviour
 {
 	[SerializeField] private int maximumBounces;
 	[Tooltip("The strength of bounce applied to ball when the seal collides with it.")]
 	[SerializeField] private float initialMoveSpeed = 10.0f;
+
+	//when touch with enemy
+	[SerializeField] private float initialMoveSpeeds = 0.5f;
+	[SerializeField] private float bounceForceScalings = 0.5f;
+
 	[Tooltip(" For every time the ball hits the water surface, the bounce strength would be scaled by this value geometrically until maximum bounces are reached")]
 	[SerializeField] private float bounceForceScaling = 0.7f;
+
 	[SerializeField] private Collider2D damageCollider;
 	[SerializeField] private Rigidbody2D rb2d;
-	private int currentBounceCount;
+	public int currentBounceCount;
 	private Vector2 travelDir = Vector2.zero;
 	private float curSpeed;
 	private bool bounceFromWater;
 
-	public void CollidedWithObstacles(Collision2D collision)
+
+
+    [Header("First level")]
+    public bool firstlevel;
+
+    public void CollidedWithObstacles(Collision2D collision)
 	{
-		bounceFromWater = collision.transform.CompareTag("Water");
+		bounceFromWater = collision.transform.CompareTag("Water")|| collision.transform.CompareTag("Enemy");//add enemy because when the ball on top of enemy, it will count as bounce
 
 		if (bounceFromWater && currentBounceCount >= maximumBounces)
 		{
@@ -49,30 +58,50 @@ public class BouncingBall : MonoBehaviour
 		ApplyTravelDir((this.transform.position - collision.transform.position).normalized, true);
 		damageCollider.enabled = true;
 
-        PlayerManagerScript.Instance.BounceBallEnergy();
-    }
+		PlayerManagerScript.Instance.BounceBallEnergy();
+	}
 
 	public void CollidedWithDamageable(Collision2D collision)
 	{
 		Bounce(collision.contacts[0].normal);
 
-        if (collision.gameObject.tag == "Enemy")
-        {
-            // Damage the enemy if hits enemy. Enemy layer is Damagable.
-            collision.gameObject.GetComponent<EnemyManagerScript>().EnemyIsHit(1);
+		if (collision.gameObject.tag == "Enemy")
+		{
+			// Damage the enemy if hits enemy. Enemy layer is Damagable.
+			collision.gameObject.GetComponent<EnemyManagerScript>().EnemyIsHit(1);
+
+            ApplyTravelDirs((this.transform.position - collision.transform.position).normalized, true);
+            damageCollider.enabled = true;
+
         }
-        else if (collision.gameObject.tag == "Object")
+		else if (collision.gameObject.tag == "Object")
+		{
+			// Collided with any object.
+			collision.gameObject.GetComponent<ItemDataScript>().CheckItemData();
+        }
+        else if (collision.gameObject.tag == "Destructible")
         {
             // Collided with any object.
-            collision.gameObject.GetComponent<ItemDataScript>().CheckItemData();
+            if (firstlevel == true)
+            {
+                GameUIManagerScript.Instance.boxleft -= 1;
+            }
         }
     }
-
 	//! Apply force to ball towards the defined direction. 
 	//! byScaledVelocity : Should the force applied be based on initialMoveSpeed scaled by number of bounces?
 	public void ApplyTravelDir(Vector2 direction, bool byScaledVelocity = false)
 	{
 		curSpeed = byScaledVelocity ? initialMoveSpeed * (Mathf.Pow(bounceForceScaling, currentBounceCount)) : rb2d.velocity.magnitude;
+
+		//! Force velocity to zero so that the bounce force is consistent
+		rb2d.velocity = Vector2.zero;
+
+		rb2d.AddForce(direction * curSpeed, ForceMode2D.Impulse);
+	}
+	public void ApplyTravelDirs(Vector2 direction, bool byScaledVelocity = false)
+	{
+		curSpeed = byScaledVelocity ? initialMoveSpeeds * (Mathf.Pow(bounceForceScalings, currentBounceCount)) : rb2d.velocity.magnitude;
 
 		//! Force velocity to zero so that the bounce force is consistent
 		rb2d.velocity = Vector2.zero;
@@ -87,7 +116,7 @@ public class BouncingBall : MonoBehaviour
 
 	private void Bounce(Vector2 normal)
 	{
-		Vector2 dir = (Vector3.Reflect(travelDir, normal) + Utils.CreateNoiseVector(-15,15)).normalized;
+		Vector2 dir = (Vector3.Reflect(travelDir, normal) + Utils.CreateNoiseVector(-15, 15)).normalized;
 		ApplyTravelDir(dir, bounceFromWater);
 	}
 
@@ -99,16 +128,16 @@ public class BouncingBall : MonoBehaviour
 	private void Update()
 	{
 		travelDir = rb2d.velocity.normalized;
-        CheckForZeroVelo();
+		CheckForZeroVelo();
 
-    }
+	}
 
-    void CheckForZeroVelo()
-    {
-        if (rb2d.IsSleeping())
-        {
-            //Debug.Log("BALL STOPPED MOVING SO FORCE IT TO MOVE");
-            rb2d.AddForce(new Vector2(Random.Range(-20.0f, 20.0f), 0.0f));
-        }
-    }
+	void CheckForZeroVelo()
+	{
+		if (rb2d.IsSleeping())
+		{
+			//Debug.Log("BALL STOPPED MOVING SO FORCE IT TO MOVE");
+			rb2d.AddForce(new Vector2(Random.Range(-20.0f, 20.0f), 0.0f));
+		}
+	}
 }

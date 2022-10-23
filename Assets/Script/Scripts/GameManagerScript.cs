@@ -362,7 +362,7 @@ if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
         {
             // Game Ends
             // Do level end UI here.
-
+            GameUIManagerScript.Instance.DisplayWinUI();
             // Temp placement to end the game.
             //ReturnToMainMenu();
         }
@@ -402,7 +402,10 @@ if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenuScene");
     }
-
+    public void NextLevel(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
     public void ReplayGame()
     {
         Time.timeScale = 1;

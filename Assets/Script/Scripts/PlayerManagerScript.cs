@@ -42,6 +42,7 @@ public class PlayerManagerScript : MonoBehaviour
     public TufCharacterScript TCS;
 
 
+
     void Start()
     {
         // Simple singleton;
@@ -283,9 +284,11 @@ public class PlayerManagerScript : MonoBehaviour
     {
         if (collision.transform.CompareTag("Item"))
         {
+
             // Check what item did the player hit.
             Debug.Log("UPDATE: INTERACTED WITH ITEM.");
             collision.gameObject.GetComponent<ItemDataScript>().CheckItemData();
+
         }
     }
 
