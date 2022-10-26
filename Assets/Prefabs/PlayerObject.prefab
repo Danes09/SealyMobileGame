@@ -3518,10 +3518,6 @@ MonoBehaviour:
   referenceTransform: {fileID: 8611944081417593862}
   animatorHandler: {fileID: 5484044701119800919}
   targetAnimator: {fileID: 4894305405761005700}
-  sealFront: {fileID: 7297095777086690119}
-  sealSideEast: {fileID: 1808998438270351543}
-  sealSideWest: {fileID: 6204135753357262436}
-  sealBack: {fileID: 8084053357175892789}
 --- !u!114 &8611944081417593858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3550,6 +3546,8 @@ MonoBehaviour:
   pointsGainedFromCrates: 10
   playerTotalPoints: 0
   isInvulnerable: 0
+  Scenetuf: 0
+  TCS: {fileID: 0}
 --- !u!114 &8611944081417593861
 MonoBehaviour:
   m_ObjectHideFlags: 0
