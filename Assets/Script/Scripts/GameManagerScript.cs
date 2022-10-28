@@ -86,7 +86,7 @@ public class GameManagerScript : MonoBehaviour
         // Checks if the player has met the game end requirements.
         CheckGameEnd();
 
-        increaseGameSpeedForInfiniteLevel();
+        //increaseGameSpeedForInfiniteLevel();
     }
 
     private void FixedUpdate()
@@ -103,6 +103,7 @@ public class GameManagerScript : MonoBehaviour
     void updateTimeElapsed()
     {
         timeElapsed += Time.deltaTime; //done to findout how much time has passed. This shall be used to for increasing game speed accordingly.. in the infinite levels
+        print("time elapsed: " + timeElapsed);
 
         //print("time elapsed:" + timeElapsed);
 
@@ -129,9 +130,16 @@ public class GameManagerScript : MonoBehaviour
         {
             // for every 10 seconds, increase game speed by 0.10
             {
+                print("infinite level");
                 Time.timeScale += 0.10f;
             }
 
+        }
+
+        else
+        {
+            print("Not infinite level");
+            Time.timeScale = 1f;
         }
 
     }
@@ -271,85 +279,9 @@ public class GameManagerScript : MonoBehaviour
 
 
 
-    //tutorialCheck= GameObject.FindGameObjectWithTag(TagManager.TUTORIAL_TAG);
-
-    //tutorialCheck = GameObject.FindGameObjectsWithTag(TagManager.TUTORIAL_TAG);
-    /* CLOSED TO TRY OUT STACKOVERFLOW code
-    if (Input.GetKeyDown(KeyCode.T) && !tutorialCheck[].activeInHierarchy) // OPEN if not open
-    {
-
-
-        Time.timeScale = 0;
-        print("tutorial opened!");
-    }
-
-    if (tutorialCheck[].activeInHierarchy && Input.GetKeyDown(KeyCode.T)) //CLOSE the tutorial if open
-    { 
-
-        Time.timeScale = 1;
-        //tutorialBubbles[i].SetActive(false);
-        print("tutorial CLOSED!");
 
 
 
-        for (i = 0; i < tutorialBubbles.Length; i++)
-        {
-            // only the one matching i == which will be on, all others will be off
-            tutorialBubbles[i].SetActive(i == which);
-        } CLOSED TO TRY OUT CODE GIVEN*/
-
-
-
-    /*for (int l=0; l<tutorialBubbles.Length; l++)
-    {
-        tutorialBubbles[l].SetActive(false);
-        print("tutorial CLOSED for loop!");
-    }/*
-
-
-
-}
-
-if (tutorialCheck.activeInHierarchy && Input.GetKeyDown(KeyCode.G))
-{
-    tutorialBubbles[0].SetActive(false);
-
-        for  (i = 1; i < tutorialBubbles.Length; i++)
-        {
-            tutorialBubbles[i].SetActive(true);
-            i++;
-
-
-
-        }
-
-}
-
-
-
-
-//OLD
-
-/*        for (int i = 0; i < tutorialBubbles.Length; i++)
-        {*/
-
-    /*if (Input.GetKeyDown(KeyCode.T) && tutorialBubbles[i].activeInHierarchy)
-    {
-
-        tutorialBubbles[i].SetActive(false);
-        // set tutorial active to false
-        Time.timeScale = 1;
-    }
-
-    else if (Input.GetKeyDown(KeyCode.T) && !tutorialBubbles[i].activeInHierarchy)
-    {
-        tutorialBubbles[i].SetActive(true);
-
-        Time.timeScale = 0;
-
-    }*/
-
-    /*}*/
 
 
 
