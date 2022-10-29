@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Mus/test.unity
     guid: 6504191c9bc05c343997986e3014b3d1
+  - enabled: 1
+    path: Assets/Scenes/Infinite Level.unity
+    guid: b87b027e5b1ab1e4e99fc6236b8c701b
   m_configObjects: {}
