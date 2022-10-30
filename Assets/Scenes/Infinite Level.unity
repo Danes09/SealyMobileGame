@@ -2372,6 +2372,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038c605b7a7b36b4bbb826edb92ba4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crate: {fileID: 7321415248396902515, guid: fd4edf72774a8944289a0b5ed4790249, type: 3}
+  randX: 0
+  whereToSpawn: {x: 0, y: 0}
+  spawnRate: 2
+  nextSpawn: 2
+  leftMostPosition: -2
+  rightMostPosition: 2
 --- !u!4 &989835855
 Transform:
   m_ObjectHideFlags: 0
@@ -2380,7 +2387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989835853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36534357, y: -2.9434032, z: 0}
+  m_LocalPosition: {x: 0.03, y: 3.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

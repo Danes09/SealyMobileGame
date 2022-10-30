@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class spawnerInfiniteLevel : MonoBehaviour
 {
-    GameObject box;
+    public GameObject crate;
 
-    private void Start()
+    public float randX;
+    public Vector2 whereToSpawn;
+    public float spawnRate = 2f;
+    public float nextSpawn = 0f;
+
+    public float leftMostPosition = -2.0f;
+    public float rightMostPosition = 2.0f;
+
+    private void Update()
     {
-        setCorrectTimeScale();
-        
+        if (Time.time > nextSpawn)
+        {
+            nextSpawn = Time.time+spawnRate;
+            randX = Random.Range(leftMostPosition,rightMostPosition);
+            whereToSpawn = new Vector2(randX, transform.position.y);
+            Instantiate(crate, whereToSpawn, Quaternion.identity);
+
+        }
+
     }
 
 
-    void setCorrectTimeScale()
-    {
-        Time.timeScale = 1f;
-    }
+
 
 
 }
