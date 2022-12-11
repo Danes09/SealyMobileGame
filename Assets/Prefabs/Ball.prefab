@@ -105,8 +105,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8232687895117975356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.559, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9987427, w: 0.050130285}
+  m_LocalPosition: {x: 4.5, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 8232687895969001430}
@@ -151,9 +151,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumBounces: 5
   initialMoveSpeed: 11.5
+  initialMoveSpeeds: 0.5
+  bounceForceScalings: 0.5
   bounceForceScaling: 0.7
   damageCollider: {fileID: 8232687895119254418}
   rb2d: {fileID: 8232687895117975354}
+  currentBounceCount: 0
+  firstlevel: 0
 --- !u!1 &8232687895119254423
 GameObject:
   m_ObjectHideFlags: 0

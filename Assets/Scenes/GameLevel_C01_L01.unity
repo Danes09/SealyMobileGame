@@ -2377,6 +2377,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 192888865119870281, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192888865119870281, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192888865119870284, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7168967897657103153, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a,
         type: 3}
       propertyPath: CollisionEnter2D.m_PersistentCalls.m_Calls.Array.size
@@ -2401,6 +2416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: firstlevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611944081417593861, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a,
+        type: 3}
+      propertyPath: speed
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8611944081417593861, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a,
         type: 3}
@@ -2522,7 +2542,8 @@ PrefabInstance:
       propertyPath: CollisionEnter2D.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5158670332971194944, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc3aae08fc70a2f4f9c502c2b7c7dd3a, type: 3}
 --- !u!1 &1136316229
 GameObject:
@@ -6179,6 +6200,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1074259117}
+    - target: {fileID: 2851742400433870660, guid: f01ba9bc16f03554bb0227d6ad3a99c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -49.000122
+      objectReference: {fileID: 0}
     - target: {fileID: 2851742401600999043, guid: f01ba9bc16f03554bb0227d6ad3a99c8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

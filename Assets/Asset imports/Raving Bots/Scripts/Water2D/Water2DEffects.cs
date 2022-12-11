@@ -45,19 +45,19 @@ namespace RavingBots.Water2D
 			_buoyancyEffector2D.surfaceLevel = _surfaceLevel - FloatingRange * 0.5f * (Mathf.Sin(Mathf.PI * 2f * FloatingSpeed * Time.fixedTime) + 1f);
 		}
 
-		//public void OnTriggerEnter2D(Collider2D other)
-		//{
-		//	var rb = other.transform.parent.GetComponent<Rigidbody2D>();
-		//	var power = SplashFXPowerScale * Vector2.Dot(rb.velocity, Vector2.down) * rb.mass;
+		public void OnTriggerEnter2D(Collider2D other)
+		{
+			var rb = other.transform.parent.GetComponent<Rigidbody2D>();
+			var power = SplashFXPowerScale * Vector2.Dot(rb.velocity, Vector2.down) * rb.mass;
 
-		//	if (power < SplashFXPowerThreshold)
-		//		return;
+			if (power < SplashFXPowerThreshold)
+				return;
 
-		//	var splash = _splashCache[_splash];
-		//	splash.transform.position = new Vector2(other.bounds.center.x, other.bounds.min.y - SplashFXOffset);
-		//	splash.Play(power, SplashFXSounds[Random.Range(0, SplashFXSounds.Length)], power * SplashFXPowerToVolume, SplashFXPowerToPitch / power);
+			var splash = _splashCache[_splash];
+			splash.transform.position = new Vector2(other.bounds.center.x, other.bounds.min.y - SplashFXOffset);
+			splash.Play(power, SplashFXSounds[Random.Range(0, SplashFXSounds.Length)], power * SplashFXPowerToVolume, SplashFXPowerToPitch / power);
 
-		//	_splash = (_splash + 1) % _splashCache.Length;
-  //      }
+			_splash = (_splash + 1) % _splashCache.Length;
+		}
 	}
 }
