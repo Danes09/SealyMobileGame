@@ -103,7 +103,7 @@ public class GameManagerScript : MonoBehaviour
     void updateTimeElapsed()
     {
         timeElapsed += Time.deltaTime; //done to findout how much time has passed. This shall be used to for increasing game speed accordingly.. in the infinite levels
-        print("time elapsed: " + timeElapsed);
+        //print("time elapsed: " + timeElapsed);
 
         //print("time elapsed:" + timeElapsed);
 

@@ -21,12 +21,12 @@ public class BalloonScript : MonoBehaviour
             Redballoon.SetTrigger("BallonExplode");
             StartCoroutine(BalloonExplode());
         }
-        if (collision.gameObject.tag == "Player")//when player hit the balloon, balloon destroy
-        {
-            thisCageManager.BalloonDestroyed();
-            Redballoon.SetTrigger("BallonExplode");
-            StartCoroutine(BalloonExplode());
-        }
+        //if (collision.gameObject.tag == "Player")//when player hit the balloon, balloon destroy
+        //{
+        //    thisCageManager.BalloonDestroyed();
+        //    Redballoon.SetTrigger("BallonExplode");
+        //    StartCoroutine(BalloonExplode());
+        //}
     }
     IEnumerator BalloonExplode()
     {

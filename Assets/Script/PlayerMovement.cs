@@ -124,14 +124,42 @@ public class PlayerMovement : MonoBehaviour
 			PlayerMove();
 		}
 	}
-
+	//public float speed;
+	//public Vector2 lastclickpos;
+	//bool moving;
 	private void PlayerMove()
 	{
 		this.transform.Translate(currentDirection * movementSpeed * Time.deltaTime, Space.World);
+		//if (Input.GetMouseButtonDown(1))
+		//{
 
+		//    lastclickpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		//    moving = true;
+		//}
+		//if (moving && (Vector2)transform.position != lastclickpos)
+		//{
+		//    float step = speed * Time.deltaTime;
+		//    transform.position = Vector2.MoveTowards(transform.position, lastclickpos, step);
+		//    updateanimation();
+		//}
+		//else
+		//{
+		//    moving = false;
+		//}
 	}
 
+	//private void updateanimation()
+	//{
+	//    float distance = Vector2.Distance(transform.position, lastclickpos);
+	//    //animator.SetFloat("distance", distance);
+	//    if (distance > 0.01)
+	//    {
+	//        Vector3 direction = transform.position - new Vector3(lastclickpos.x, lastclickpos.y, transform.position.z);
+	//        float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
+	//        //animator.SetFloat("angle", angle);
+	//    }
 
+	//}
 
 	private void PlayerSink()
 	{
