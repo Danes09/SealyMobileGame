@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody2D rd2d;
 
 	float pushUpForceFromBarrier = 2.0f;
+	float pushSideWaysForceOnCollidingWithPenguin = 2.0f;
 
 	//Use to Stop Sealy Swim in air
 	public GameObject tapZone;
@@ -246,6 +247,12 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
+
+
+
+
+
+
 	IEnumerator OutWater()
 	{
 		yield return new WaitForSeconds(1.0f);
@@ -286,7 +293,41 @@ public class PlayerMovement : MonoBehaviour
 			rd2d.velocity = new Vector2(rd2d.velocity.x, rd2d.velocity.y + pushUpForceFromBarrier);
 
 		}
+
+
+		/*if it collides with the enemy, throw sealy back a little*/
+		if (other.gameObject.tag == TagManager.ENEMY_TAG)
+		{
+
+			if (Random.Range(0, 2) > 0)
+			{
+				//right
+				rd2d.velocity = new Vector2(rd2d.velocity.x + pushSideWaysForceOnCollidingWithPenguin, rd2d.velocity.y );
+				
+			}
+
+			else
+			{//left
+
+				rd2d.velocity = new Vector2(rd2d.velocity.x - pushSideWaysForceOnCollidingWithPenguin, rd2d.velocity.y);
+			}
+		}
+
+
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
