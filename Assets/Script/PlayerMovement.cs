@@ -298,6 +298,7 @@ public class PlayerMovement : MonoBehaviour
 		/*if it collides with the enemy, throw sealy back a little*/
 		if (other.gameObject.tag == TagManager.ENEMY_TAG)
 		{
+			print("collided with enemy");
 
 			if (Random.Range(0, 2) > 0)
 			{

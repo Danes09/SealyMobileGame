@@ -80,22 +80,7 @@ public class PlayerManagerScript : MonoBehaviour
 
 
     }
-    /*if it collides with the enemy, throw sealy back a little*/
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag==TagManager.ENEMY_TAG)
-
-        if (Random.Range(0, 2) > 0)
-        {
-            //left
-        }
-
-        else
-        {
-            //right
-        }
-        
-    }
+   
 
 
     /*create a separate function for fast motion*/
