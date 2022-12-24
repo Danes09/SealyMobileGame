@@ -5605,9 +5605,13 @@ MonoBehaviour:
   playerEnergyUI: {fileID: 580631370}
   playerHungerUI: {fileID: 1427478768}
   playerPointsUI: {fileID: 1180547616}
+  playerboxleftui: {fileID: 0}
+  tuffoodleftui: {fileID: 0}
   gameEndPointsUI:
   - {fileID: 1049385469}
   - {fileID: 1262307498}
+  boxleft: 5
+  Firstscene: 0
   pauseMenuUI: {fileID: 1026429709}
   gameOverPanel: {fileID: 397739728}
   WinPanel: {fileID: 1262307497}
