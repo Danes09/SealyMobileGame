@@ -114,8 +114,41 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	private void FixedUpdate()
+
+	
+
+
+	void ifIsJumping()
+    {
+		if (isJumping == true)
+		{
+			jump();
+		}
+
+	}
+
+	void ifIsDriving()
+    {
+		if (isDrive == true)
+		{
+			drive();
+		}
+	}
+
+
+	private void Update()
 	{
+
+		ifIsJumping();
+		ifIsDriving();
+
+		stunnedOrMove(); //stunned or move was under fixedupdate
+
+	}
+
+
+    private void stunnedOrMove()
+    {
 		if (stunned)
 		{
 			PlayerSink();
@@ -124,7 +157,16 @@ public class PlayerMovement : MonoBehaviour
 		{
 			PlayerMove();
 		}
+
 	}
+
+	//changing FixedUpdate to Update
+	private void FixedUpdate()
+	{
+		
+	}
+
+
 	//public float speed;
 	//public Vector2 lastclickpos;
 	//bool moving;
@@ -320,31 +362,9 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+	
 
-
-
-
-
-
-
-
-
-
-
-
-	private void Update()
-	{
-		if (isJumping == true)
-		{
-			jump();
-		}
-
-		if (isDrive == true)
-		{
-			drive();
-		}
-
-	}
+	
 	private void jump()
 	{
 		CheckWater = false;
